@@ -1,0 +1,894 @@
+package com.msubaroda.Anurag.assignment;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+//1. Write a program to enter your name and say Hello.
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+public class Q1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your Name: ");
+        String name = sc.next();
+        System.out.println("Hello " + name);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+//Q-10  What is the use of instanceof operator. Write a program to prove your points.
+
+
+package com.msubaroda.Anurag.assignment;
+
+class test {}
+
+class Q10
+{
+    public static void main(String[] args)
+    {
+        test t1 = new test();
+
+        System.out.println("Is t1 an instance of test: " + (t1 instanceof test));
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//Q-11  Write a program to accept the details of a student (Name, father’s name, university name, program name, year, CGPA till previous semester, Mobile No., Adhar No., ) of your class and print the values.
+
+import java.util.Scanner;
+public class Q11
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter name:");
+        String name = sc.next();
+        System.out.println("Enter father’s name:");
+        String fname = sc.next();
+        System.out.println("Enter university name:");
+        String uni = sc.next();
+        System.out.println("Enter program name:");
+        String prog = sc.next();
+        System.out.println("Enter year:");
+        int year = sc.nextInt();
+        System.out.println("Enter CGPA:");
+        Double cgpa = sc.nextDouble();
+        System.out.println("Enter Mobile No:");
+        Double mob = sc.nextDouble();
+        System.out.println("Enter Aadhar No:");
+        Double adhar = sc.nextDouble();
+
+
+        System.out.println("Name: " + name);
+        System.out.println("Father’s Name: " + fname);
+        System.out.println("University Name: " + uni);
+        System.out.println("Program Name: " + prog);
+        System.out.println("Year: " + year);
+        System.out.println("CGPA: " + cgpa);
+        System.out.println("Mobile No: " + mob);
+        System.out.println("Aadhar No: " + adhar);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//Q-12 Redo the above problem and print the students deails in a paragraph as
+//I am ___, My father’s name is ___. I am doing ___ from ____. My CGPA till previous semester is__. My Mobile Number and Adhar Numbers are____________.
+
+import java.util.Scanner;
+public class Q12
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter name:");
+        String name = sc.next();
+        System.out.println("Enter father’s name:");
+        String fname = sc.next();
+        System.out.println("Enter university name:");
+        String uni = sc.next();
+        System.out.println("Enter program name:");
+        String prog = sc.next();
+        System.out.println("Enter year:");
+        int year = sc.nextInt();
+        System.out.println("Enter CGPA:");
+        Double cgpa = sc.nextDouble();
+        System.out.println("Enter Mobile No:");
+        Double mob = sc.nextDouble();
+        System.out.println("Enter Aadhar No:");
+        Double adhar = sc.nextDouble();
+
+//        I am ___, My father’s name is ___. I am doing ___ from ____.
+//        My CGPA till previous semester is__. My Mobile Number and Adhar Numbers are____________.
+
+
+        System.out.println("I am " + name +
+                ", My father's name " + fname +
+                ". I am doing " + prog +
+                " from " + uni +
+                ". My CGPA till previous semester is " + cgpa +
+                ". My mobile number and Adhaar number are " + mob + adhar);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//13. Redo the above and print every statement in new line using a single print().
+
+
+import java.util.Scanner;
+public class Q13
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter name:");
+        String name = sc.next();
+        System.out.println("Enter father’s name:");
+        String fname = sc.next();
+        System.out.println("Enter university name:");
+        String uni = sc.next();
+        System.out.println("Enter program name:");
+        String prog = sc.next();
+        System.out.println("Enter year:");
+        int year = sc.nextInt();
+        System.out.println("Enter CGPA:");
+        Double cgpa = sc.nextDouble();
+        System.out.println("Enter Mobile No:");
+        Double mob = sc.nextDouble();
+        System.out.println("Enter Aadhar No:");
+        Double adhar = sc.nextDouble();
+
+//        I am ___, My father’s name is ___. I am doing ___ from ____.
+//        My CGPA till previous semester is__. My Mobile Number and Adhar Numbers are____________.
+
+
+        System.out.println("I am " + name +
+                ", My father's name " + fname +
+                ". I am doing " + prog +
+                " from " + uni +
+                ". My CGPA till previous semester is " + cgpa +
+                ". My mobile number and Adhaar number are " + mob + adhar);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+//Q-14  Write a program to convert Farenheit to Celsius and vice versa.
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+
+class Q14
+{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Press 1 to convert farenheit to celcius or Press 2 to convert celcius to farenheit: ");
+        int choice = sc.nextInt();
+        int temp = 0;
+        boolean cel = false;
+        switch (choice){
+            case 1:
+                System.out.println("Enter the temperature in Fareneit: ");
+                temp = sc.nextInt();
+                cel = false;
+                break;
+
+            case 2:
+                System.out.println("Enter the temperature in Celcius: ");
+                temp = sc.nextInt();
+                cel = true;
+                break;
+            default:
+                System.out.println("Invalid Credentials !!! ");
+                System.exit(0);
+        }
+
+        if (cel){
+            int convertTemp = ((temp * 9)/5)+32;
+            System.out.println("Temperature in Farenheit is: " + convertTemp);
+        }
+        else {
+            int convertTemp = ((temp - 32)* 5)/ 9;
+            System.out.println("Temperature in Celcius is: " + convertTemp);
+        }
+    }
+}----------------------------------------
+ 
+ 
+ 
+//15. Write a program to generate 50 Fibonacci numbers
+
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+
+
+public class Q15 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter how many fibonacci series u want: ");
+        int number = sc.nextInt();
+        int first = 0, second = 1, third;
+        if(number > 1)
+            System.out.print( first + " ");
+        if (number > 2)
+            System.out.print(second + " ");
+
+        for (int i = 2; i < number; i++ )
+        {
+            third = first + second;
+            System.out.print(third + " ");
+            first = second;
+            second = third;
+        }
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//16. Write a program to print number of days in a month.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q16 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the month number: ");
+        int month = sc.nextInt();
+        if (month < 13 || month > 0)
+        {
+            System.out.println("Invalid Credentials !!!");
+            System.exit(0);
+        }
+        if (month == 2)
+            System.out.println("This Month has 28 or 29 days.");
+        else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 )
+            System.out.println("This Month has 31 days.");
+        else
+            System.out.println("This Month has 30 days.");
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//17. Write a program to divide and multiply a number by 2 without using / and * operator.
+//        Hint: use >> and << operators.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q17 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int num2, num1;
+        System.out.print("Enter the number 1: ");
+        num1 = sc.nextInt();
+        System.out.print("Enter the number 2: ");
+        num2 = sc.nextInt();
+//      Multiplication
+        int mul = 0, count = 0, div = 0, temp = num2;
+        while (temp > 0)
+        {
+            if (temp % 2 == 1) {
+                mul += num1 << count;
+                }
+            count++;
+            temp /= 2;
+        }
+        System.out.println("The multiplication of " + num1 + " and " + num2 + "is: " + mul);
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//18. Write a for loop which runs infinite times.
+package com.msubaroda.Anurag.assignment;
+
+public class Q18 {
+    public static void main(String[] args) {
+
+    for (int i = 1; i > 0; i++){
+        System.out.println("running");
+    }
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//19. Write a while loop which runs infinite times.
+package com.msubaroda.Anurag.assignment;
+
+
+public class Q19 {
+    public static void main(String[] args) {
+
+        while (true){
+            System.out.println("Running");
+        }
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//2. Go to the following link and solve the problem. Submit your code along with the test report.
+// https://www.hackerrank.com/challenges/java-if-else/problem
+
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+public class Q2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number: ");
+        int Number = sc.nextInt();
+        if (Number % 2 == 0){
+            if ((Number < 20) || (Number > 5)){
+                System.out.println("Weird");
+            }
+            else {
+                System.out.println("Not Weird");
+            }
+        }
+        else {
+            System.out.println("Weird");
+        }
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+//20. Write a program to reverse a number.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q20 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a Number: ");
+        int number = sc.nextInt();
+        int temp = number, digit, reverse = 0;
+        while (temp != 0)
+        {
+            digit = temp % 10;
+            reverse = reverse *10 + digit;
+            temp /= 10;
+        }
+        System.out.println(reverse);
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//21. Write a program to test the primality of a number.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q21 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int number = sc.nextInt();
+        for (int i = 2; i < number; i++)
+        {
+            if (number % i == 0)
+            {
+                System.out.println("Number is not prime");
+                System.exit(0);
+            }
+        }
+        System.out.println("Number is a Prime Number");
+
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//22. Write a program which prints the division of a student based on the marks scored in 5 subjects in HSC.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q22 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter marks in subjects 1: ");
+        int mark1 = sc.nextInt();
+        System.out.print("Enter marks in subjects 2: ");
+        int mark2 = sc.nextInt();
+        System.out.print("Enter marks in subjects 3: ");
+        int mark3 = sc.nextInt();
+        System.out.print("Enter marks in subjects 4: ");
+        int mark4 = sc.nextInt();
+        System.out.print("Enter marks in subjects 5: ");
+        int mark5 = sc.nextInt();
+        int average = (mark1 + mark2 + mark3 + mark4 + mark5)/5;
+        System.out.println("The Average Marks is: " + average);
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//23. Write a loop (for and while both) which runs from 1-10 but prints only values from 1-6.
+package com.msubaroda.Anurag.assignment;
+
+
+public class Q23 {
+    public static void main(String[] args) {
+//        for loop
+        for (int i = 1; i < 11; i++)
+        {
+            if (i < 7)
+                System.out.print(i);
+        }
+//      while loop
+        System.out.println();
+        int i = 1;
+        while (i < 11)
+        {
+            if (i < 7)
+                System.out.print(i);
+            i++;
+        }
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//24. Write a loop (for and while both) which runs from 1-10 but prints only values from 1-10 except 7.
+package com.msubaroda.Anurag.assignment;
+
+
+public class Q24 {
+    public static void main(String[] args) {
+        int j = 1;
+        boolean print = true;
+        while (j < 11)
+        {
+            print = true;
+            for (int i = 2; i < j; i++)
+            {
+                if (j%i == 0)
+                    print = false;
+
+            }
+
+            if (print && (j != 1) && (j != 7))
+                System.out.print(j + " ");
+            j++;
+        }
+
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//25. Write program which runs from 1-500 and stops as soon as the sum of all the previous terms happens 800.
+package com.msubaroda.Anurag.assignment;
+
+
+public class Q25 {
+    public static void main(String[] args) {
+        int sum = 0;
+    for (int i = 1; i < 501; i++)
+    {
+        sum += i;
+        System.out.print(i + " ");
+        if (sum > 800)
+            System.exit(0);
+    }
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//26. Write a program to print a multiplication table of 5 as per given
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q26 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number whose multiplication table u want: ");
+        int number = sc.nextInt();
+        for (int i = 1; i < 11; i++)
+        {
+            System.out.println(number + " x " + i + " = "+ number*i);
+        }
+
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//27. Write a program which prints
+//*
+//**
+//***
+//****
+//*****
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q27 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number of Rows u want in pattern: ");
+        int number = sc.nextInt();
+        for (int i = 1; i < number+1; i++)
+        {
+            for (int j=0; j < i; j++)
+                System.out.print("* ");
+            System.out.println();
+        }
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//28. Write a program to print the eligibility of marriage of based on age and sex of a person.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q28 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the age: ");
+        int age = sc.nextInt();
+        System.out.println("Enter the gender (like: male/female in lowercase): ");
+        String gender = sc.next();
+        if (gender == "male")
+        {
+            if (age > 22)
+                System.out.println("You are Eligible for marrage.");
+            else
+                System.out.println("You are Not Eligible for marrage.");
+        }
+        else
+        {
+            if (age > 20)
+                System.out.println("You are Eligible for marrage.");
+            else
+                System.out.println("You are Not Eligible for marrage.");
+
+        }
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//29. Write a program to calculate the area of triangle whose all three sides are given.
+// Hint: Use Heron’s formulae. https://en.wikipedia.org/wiki/Heron%27s_formula
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q29 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the side 1: ");
+        int side1 = sc.nextInt();
+        System.out.println("Enter the side 2: ");
+        int side2 = sc.nextInt();
+        System.out.println("Enter the side 3: ");
+        int side3 = sc.nextInt();
+
+        int param = side1 + side2 + side3;
+        double area = Math.sqrt(param*(param-side1)*(param-side2)*(param-side3));
+        System.out.println("The area of the Triangle is: " + area);
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//Q-3   Write a program to calculate the area of a circle. Use the value of PI from Math class.
+
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+
+public class Q3 {
+    public static void main(String args[])
+    {
+        System.out.print("Enter the radius: ");
+
+        Scanner sc = new Scanner(System.in);
+        double radius = sc.nextDouble();
+
+        double area = Math.PI * (radius * radius);
+        System.out.println("The area of circle is: " + area);
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//30. Write a program to calculate the electricity bill by reading the figures of current and previous months.
+// Tariff is given below:
+//Unit Slabs        Tariff Rates
+//First 150 units       2.75
+// Next 250 units       4.80
+//Next 600 units        5.20
+//Above 1000 units      9.90
+
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q30 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter total Units: ");
+        int units = sc.nextInt();
+        double total = 0;
+        if (units <= 150)
+        {
+            total = (2.75 * units);
+        }
+        else if ( (units-150) <= 250)
+        {
+            total = (150 * 2.75) + ((units - 150)*4.80);
+        }
+        else if ( (units-400) <= 600)
+        {
+            total = (150 * 2.75) + (250 * 4.80) + ((units - 400)*5.20);
+        }
+        else
+            total = (150 * 2.75) + (250 * 4.80) + (600 * 5.20) + ((units - 1000)*9.90);
+
+        System.out.println("The total Amount is: " + total);
+
+
+
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//4. Solve the above problem by taking a constant PI = 3.1414 in your program.
+// Hint: take a final variable.
+
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+
+public class Q4 {
+    public static void main(String[] args) {
+        final float pi = 3.1414f;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the radius: ");
+        float radius = sc.nextFloat();
+        float area = pi*radius*radius;
+        System.out.println("The area of the circle is: " + area);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//Q-5   Write a program to calculate area of a square.
+import java.util.Scanner;
+public class Q5
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the length of side in meters: ");
+        int side = sc.nextInt();
+
+        System.out.println("Area of the square is: "+ side*side);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//Q-6    Write a program to calculate sum of n natural numbers.
+
+
+import java.util.Scanner;
+public class Q6
+{
+    public static void main(String args[])
+    {
+        int sum = 0;
+        System.out.print("Enter the number value: ");
+
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+
+        for (int i = 1; i<num+1; i++)
+        {
+            sum = sum +i;
+        }
+
+        System.out.println("Sum of numbers : "+sum);
+    }
+}
+
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//Q-7   Write a program to calculate product of n natural numbers.
+import java.util.Scanner;
+public class Q7
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("How many Natural Number product u want: ");
+        int num = sc.nextInt();
+        int result = 1;
+        for (int i = 1; i < num+1; i++)
+        {
+            result *= i;
+        }
+
+        System.out.println("Product of the " + num + " numbers is: "+result);
+    }
+}
+----------------------------------------
+ 
+ 
+ 
+package com.msubaroda.Anurag.assignment;
+//Q-8  Write a program to calculate product of two integer numbers without using * operator.
+
+
+import java.util.*;
+public class Q8
+{
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Input the first number: ");
+        int num1 = in.nextInt();
+        System.out.print("Input the second number: ");
+        int num2 = in.nextInt();
+        int result = 0;
+        for(int i = 0; i < num2; i++ )
+        {
+            result += num1;
+        }
+
+        System.out.println("Result: " + result);
+    }
+
+}
+----------------------------------------
+ 
+ 
+ 
+//Q-9  Write a program to find greatest and least of 3 numbers.
+
+package com.msubaroda.Anurag.assignment;
+import java.util.Scanner;
+
+
+public class Q9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the First Number: ");
+        int num1 = sc.nextInt();
+        System.out.println("Enter the First Number: ");
+        int num2 = sc.nextInt();
+        System.out.println("Enter the First Number: ");
+        int num3 = sc.nextInt();
+
+//        Conditons for Greatest Number
+        if ((num1 > num2) && (num1 > num3)){
+            System.out.println("The Greatest number is: " + num1);
+        }
+        else if ((num2 > num1) && (num2 > num3)){
+            System.out.println("The Greatest number is: " + num2);
+        }
+        else if ((num3 > num1) && (num3 > num2)){
+            System.out.println("The Greatest number is: " + num3);
+        }
+
+//        Condition for Smallest
+        if ((num1 < num2) && (num1 < num3)){
+            System.out.println("The Smallest number is: " + num1);
+        }
+        else if ((num2 < num1) && (num2 < num3)){
+            System.out.println("The Smallest number is: " + num2);
+        }
+        else if ((num3 < num1) && (num3 < num2)){
+            System.out.println("The Smallest number is: " + num3);
+        }
+
+
+    }
+}
+----------------------------------------
+ 
+ 
+ 
