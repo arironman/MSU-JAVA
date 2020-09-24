@@ -1,0 +1,1733 @@
+
+		Name : Anurag Rai
+        
+
+package com.msubaroda.Anurag.assignment;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+    }
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 1. Create an array of integer type in different ways
+
+package com.msubaroda.Anurag.assignment;
+
+public class Q1 {
+    public static void main(String[] args) {
+
+
+        int array_type_1[] = new int[10];
+        int array_type_2[] = {1, 2, 3, 4, 5};
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+// 2. Create an array of integer type and store the values of float types. Report the error that you
+//get.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q2 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        int a[] = {4.5, 3.5, 1.5};
+// This line create error in other code also so i make it comment
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+
+ 
+// 3.Create an array of character types. Can we convert this array into a String?If yes, please do.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of character array: ");
+        int size = sc.nextInt();
+        char array[] = new char[size];
+        System.out.println("Enter the elements of array: ");
+        for (int i = 0; i < size; i++)
+        {
+            System.out.format("Enter the %d Element of array: ", i);
+            array[i] = sc.next().charAt(0);
+
+        }
+        System.out.print("The Character array is: ");
+        for (char element: array) {
+            System.out.print(element + ", ");
+        }
+
+//        converting char array to String
+        String string = new String(array);
+        System.out.println("\nThe converted String is: "+ string);
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 4. Write a program to create arrays of all the primitive types.
+// primitive data types in java are:-
+// byte, short, int, long, float, double, boolean and char
+package com.msubaroda.Anurag.assignment;
+
+
+public class Q4 {
+    public static void main(String[] args) {
+
+    byte array_byte[] = new byte[5];
+    short array_short[] = new short[5];
+    int array_int[] = new int[5];
+    long array_long[] = new long[5];
+    float array_float[] = new float[5];
+    double array_double[] = new double[5];
+    boolean array_bool[] = new boolean[5];
+    char array_char[] = new char[5];
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+  
+// 5. Write a program to iterate over the array and print its elements. (Use for loop)
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q5 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        printing array
+        System.out.print("\nThe elements of array are: ");
+        for (int i = 0; i<size ; i++)
+        {
+            System.out.print(array[i]+ " ");
+        }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 6. Write a program to iterate over the array and print its elements. (Use while loop)
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q6 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        //        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        int index = 0;
+        while (index < size)
+        {
+            System.out.print("Enter the element of "+ index + " index: ");
+            array[index] = sc.nextInt();
+            index++;
+        }
+
+//        The elements of the array are
+        System.out.print("\nThe Elements of the array are: ");
+        index = 0;
+        while (index < size)
+        {
+            System.out.print(array[index]+ ", ");
+            index++;
+        }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 7. Write a program to iterate over the array and print its elements. (Use for each loop)
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q7 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        printing array
+        System.out.print("\nThe elements of array are: ");
+        for (int element: array)
+        {
+            System.out.print(element+ " ");
+        }
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 8. Write a program to print the elements of an integer/float array after doubling.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q8 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        Doubling the array elements
+        for (int i = 0; i < size; i++)
+        {
+            array[i] *= 2;
+        }
+
+
+//        printing array
+        System.out.print("\nThe elements of array are: ");
+        for (int element: array)
+        {
+            System.out.print(element+ " ");
+        }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 9. Write a program that sums the elements of a char array.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q9 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        char array[] = new char[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use and making sum of elements
+        int sum = 0;
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.next().charAt(0);
+            sum += array[i];
+        }
+        System.out.println("\nThe Sum of the elements of the array is: "+ sum);
+
+
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+
+
+ 
+ 
+// 10. Find the length of an array.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q10 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        //        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+        System.out.println("\nThe length of the array is: " + array.length);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 11. Write a method which takes an array as a parameter and returns the sum of all of its elements.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q11 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        Creating objects of Q11 class to use the sum method.
+        Q11 arr = new Q11();
+        System.out.println("\nThe sum of the elements of the array is: " + arr.sum(array));
+
+    }
+
+//    The sum method which take array as input and return the sum of its elements
+    public int sum(int [] array){
+        int total = 0;
+        for (int element: array)
+        {
+            total += element;
+        }
+        return total;
+    }
+
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 12. Write a program to access an element of the array beyond its length. Report the
+// error/exception if any.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q12 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int array[] = {1, 2, 3};
+        System.out.println(array[3]);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 13. Write a program to copy all elements of one array into another array.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q13 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        code for copying array
+        int array_copy[] = new int[array.length];
+        for (int i = 0; i < array.length; i++)
+        {
+            array_copy[i] = array[i];
+        }
+        System.out.print("\nThe copied array elements are: ");
+        for (int element: array_copy)
+        {
+            System.out.print(element +" ");
+        }
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 14. Write a program to find the frequency of each element in the array.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q14 {
+    public void frequency(int [] array){
+        int elements[] = new int[array.length];
+        int freq[] = new int[array.length];
+
+        int index = 0;
+        boolean element_found = false;
+        for (int i = 0; i < array.length; i++)
+        {
+            element_found = false;
+            for ( int j = 0; j < array.length; j++)
+            {
+                if (elements[j] == array[i])
+                {
+                    freq[j] = freq[j] + 1;
+                    element_found = true;
+                    break;
+                }
+            }
+            if (!element_found)
+            {
+                elements[index] = array[i];
+                freq[index] = 1;
+                index++;
+            }
+        }
+
+        for (int i = 0; i < array.length; i++)
+        {
+            if (elements[i] == 0)
+                break;
+            System.out.println("Element " + elements[i] + " has " + freq[i] + " frequency ");
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from user
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//      code for frequency
+
+//        creating object to call method
+        Q14 object = new Q14();
+        object.frequency(array);
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 15. Write a program to print the duplicate elements of an array.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Q15 {
+    public void double_elements(int [] array)
+    {
+        int elements[] = new int[array.length];
+        int double_element[] = new int[array.length];
+        boolean element_found = false, double_ele_found = false;
+        int double_index = 0, elements_index = 0;
+        for (int element: array)
+        {
+            element_found = false;
+            for ( int check_element: elements)
+            {
+                if (check_element == element)
+                {
+                    for (int temp: double_element){
+                        if (temp == element) {
+                            double_ele_found = true;
+
+                            break;
+                        }
+                        else
+                            double_ele_found = false;
+                }
+                    if (!double_ele_found) {
+                        double_element[double_index] = element;
+                        double_index++;
+                        break;
+                    }
+                }
+            }
+            if (!element_found)
+            {
+                elements[elements_index] = element;
+                elements_index++;
+            }
+        }
+
+        System.out.print("\nThe double Elements are: ");
+        for (int element: double_element)
+        {
+            if (element == 0)
+                break;
+            System.out.print(element + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//      code for checking double elements
+//      creating object to use the method double_elements
+        Q15 object = new Q15();
+        object.double_elements(array);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 16. Write a program to print the elements of an array in reverse order.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q16 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        printing array in reverse order
+        System.out.print("\nThe elements of the array are: ");
+        for (int i = array.length; i > 0; i--)
+        {
+            System.out.print(array[i-1] + " ");
+        }
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 17. Write a program to print the elements of an array present on even position.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q17 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        printing elements of even position(even index number)
+        System.out.print("\nThe elements of the array at even index are: ");
+        for (int i = 0; i < array.length; i+=2)
+        {
+            System.out.print(array[i] + " ");
+        }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 18. Write a program to print the elements of an array present on odd position.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q18 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+//        Taking array size input from user
+        System.out.print("Enter the size of array: ");
+        int size = sc.nextInt();
+        int array[] = new int[size];
+        System.out.println("Enter the elements of array: ");
+
+//        Taking array element input from use
+        for (int i = 0; i < size; i++)
+        {
+            System.out.print("Enter the element of "+ i + " index: ");
+            array[i] = sc.nextInt();
+        }
+
+//        printing elements of odd position(odd index number)
+        System.out.print("\nThe elements of the array at odd indexs are: ");
+        for (int i = 1; i < array.length; i+=2)
+        {
+            System.out.print(array[i] + " ");
+        }
+
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 19. Write a program to create a print the elements of a 2D array of float type.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q19 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//      creating array
+        int array[][] = new int[rows][cols];
+        System.out.println("Enter the elements of array: ");
+
+
+//        Taking array element input from use
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+
+
+//       printing array elements
+        System.out.println("\nThe Elements of the 2D-array(Matrix) are: ");
+        for (int i = 0; i < rows; i++)
+        {
+            System.out.print("\t\t\t");
+            for (int j = 0; j < cols; j++) {
+                System.out.print(array[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+// 20. Write a program to create a zagged array of integer type.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q20 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+//      creating array
+        int array[][] = new int[rows][];
+        System.out.println("Enter the elements of array: ");
+
+//      jagged array
+        for (int i = 0; i < rows; i++) {
+            System.out.print("Enter the number of columns u want in " + i + " row: ");
+            int cols = sc.nextInt();
+            array[i] = new int[cols];
+        }
+
+
+//        Taking array element input from use
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+
+
+//       printing array elements
+        System.out.println("\nThe Elements of the 2D-array(Matrix) are: ");
+        for (int i = 0; i < rows; i++)
+        {
+            System.out.print("\t\t\t");
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 21. Write a program to find the frequency of odd & even numbers in the given matrix
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q21 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//      creating array
+        int array[][] = new int[rows][cols];
+        System.out.println("Enter the elements of array: ");
+
+
+//        Taking array element input from use
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+
+
+//       printing array elements
+        System.out.println("\nThe Elements of the 2D-array(Matrix) are: ");
+        int odd_freq = 0, even_freq = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            System.out.print("\t\t\t");
+            for (int j = 0; j < cols; j++) {
+                System.out.print(array[i][j]+" ");
+                if (array[i][j] % 2 == 0)
+                    even_freq++;
+                else
+                    odd_freq++;
+
+            }
+            System.out.println();
+        }
+        System.out.println("\n The even frequency of elements are: " + even_freq + "\n The odd frequency of elements are: " + odd_freq);
+
+
+    }
+
+    }
+
+
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 22. Write a program to find the sum of each row and each column of a matrix
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q22 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//      creating array
+        int array[][] = new int[rows][cols];
+        System.out.println("Enter the elements of array: ");
+
+
+//        Taking array element input from use
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+
+
+//       printing array elements
+        System.out.println("\nThe Elements of the 2D-array(Matrix) are: ");
+        for (int i = 0; i < rows; i++)
+        {
+            System.out.print("\t\t\t");
+            for (int j = 0; j < cols; j++) {
+                System.out.print(array[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+
+//        code for sum of column
+        int col_sum = 0;
+        for (int k = 0; k < cols ; k++) {
+            col_sum = 0;
+
+            for (int i = 0; i < rows; i++) {
+                for (int j = k; j == k; j++) {
+                    col_sum += array[i][j];
+                }
+
+            }
+            System.out.println("The sum of " + k + " indexed column is: " + col_sum);
+
+        }
+
+        System.out.println();
+
+//        code for sum of row
+        int row_sum = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            row_sum = 0;
+            for (int j = 0; j < cols; j++) {
+                row_sum += array[i][j];
+            }
+            System.out.println("The sum of " + i + " indexed row is: " + row_sum);
+        }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 23. Write a program to determine whether two matrices are equal
+
+package com.msubaroda.Anurag.assignment;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class Q23 {
+
+//   method to take array input from user
+    public int[][] array_input(int rows, int cols) {
+        int array[][] = new int[rows][cols] ;
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < rows; i++ )
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index.: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+        return array;
+
+    }
+
+
+//    method to display matrix
+    public void matrix_display(int [][] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print("\t\t\t\t\t");
+            for (int j = 0; j < array[i].length; j++)
+            {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+
+        }
+    }
+
+
+//    method to check matrix is equal or not
+    public boolean equal(int [][] matrix1, int [][] matrix2)
+    {
+        for (int i = 0; i < matrix1.length; i++)
+        {
+            for (int j = 0; j <  matrix1[i].length; j++)
+            {
+                if (matrix1[i][j] != matrix2[i][j])
+                    return false;
+            }
+        }
+        return true;
+    }
+
+//    main method
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//        creating object to use the methods
+        Q23 object = new Q23();
+
+//      creating array
+        System.out.println("\n\tEnter the elements of matrix1: ");
+        int matrix1[][] = object.array_input(rows, cols);
+        System.out.println("\n\tEnter the elements of matrix2: ");
+        int matrix2[][] = object.array_input(rows, cols);
+
+
+//       printing Matrix elements
+        System.out.println("\nMatrix 1 is: ");
+        object.matrix_display(matrix1);
+        System.out.println("\n\nThe matrix 2 is: ");
+        object.matrix_display(matrix2);
+
+
+//        comparing matrix
+        boolean result = object.equal(matrix1, matrix2);
+        if (result)
+            System.out.println("Matrixes are Equal.");
+        else
+            System.out.println("Matrixes are not Equal.");
+
+
+    }
+
+
+    }
+
+
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+//  24. Write a program to add two matrices
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q24 {
+
+    //   method to take array input from user
+    public int[][] array_input(int rows, int cols) {
+        int array[][] = new int[rows][cols] ;
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < rows; i++ )
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index.: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+        return array;
+
+    }
+
+
+    //    method to display matrix
+    public void matrix_display(int [][] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print("\t\t\t\t\t");
+            for (int j = 0; j < array[i].length; j++)
+            {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+
+        }
+    }
+
+
+    //    method to add matrix
+    public int[][] add(int [][] matrix1, int [][] matrix2)
+    {
+        int temp[][] = new int[matrix1.length][matrix1[0].length];
+        for (int i = 0; i < matrix1.length; i++)
+        {
+            for (int j = 0; j <  matrix1[i].length; j++)
+            {
+                temp[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+        return temp;
+    }
+
+    //    main method
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//        creating object to use the methods
+        Q24 object = new Q24();
+
+//      creating array
+        System.out.println("\n\tEnter the elements of matrix1: ");
+        int matrix1[][] = object.array_input(rows, cols);
+        System.out.println("\n\tEnter the elements of matrix2: ");
+        int matrix2[][] = object.array_input(rows, cols);
+
+
+//       printing Matrix elements
+        System.out.println("\nMatrix 1 is: ");
+        object.matrix_display(matrix1);
+        System.out.println("\n\nThe matrix 2 is: ");
+        object.matrix_display(matrix2);
+
+
+//        adding matrix
+        System.out.println("\n\nThe sum of the both matrixes are: ");
+        int result[][] = object.add(matrix1, matrix2);
+        object.matrix_display(result);
+
+    }
+
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 25. Write a program to subtract the two matrices.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q25 {
+
+    //   method to take array input from user
+    public int[][] array_input(int rows, int cols) {
+        int array[][] = new int[rows][cols] ;
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < rows; i++ )
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index.: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+        return array;
+
+    }
+
+
+    //    method to display matrix
+    public void matrix_display(int [][] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print("\t\t\t\t\t");
+            for (int j = 0; j < array[i].length; j++)
+            {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+
+        }
+    }
+
+
+    //    method to subtract
+    public int[][] subtract(int [][] matrix1, int [][] matrix2)
+    {
+        int temp[][] = new int[matrix1.length][matrix1[0].length];
+        for (int i = 0; i < matrix1.length; i++)
+        {
+            for (int j = 0; j <  matrix1[i].length; j++)
+            {
+                temp[i][j] = matrix1[i][j] - matrix2[i][j];
+            }
+        }
+        return temp;
+    }
+
+    //    main method
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//        creating object to use the methods
+        Q25 object = new Q25();
+
+//      creating array
+        System.out.println("\n\tEnter the elements of matrix1: ");
+        int matrix1[][] = object.array_input(rows, cols);
+        System.out.println("\n\tEnter the elements of matrix2: ");
+        int matrix2[][] = object.array_input(rows, cols);
+
+
+//       printing Matrix elements
+        System.out.println("\nMatrix 1 is: ");
+        object.matrix_display(matrix1);
+        System.out.println("\n\nThe matrix 2 is: ");
+        object.matrix_display(matrix2);
+
+
+//        subtracting matrix
+        System.out.println("\n\nThe diffrence of the both matrixes are: ");
+        int result[][] = object.subtract(matrix1, matrix2);
+        object.matrix_display(result);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 26. Write a program to multiply a matrix with a scaler.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q26 {
+
+    //   method to take array input from user
+    public int[][] array_input(int rows, int cols) {
+        int array[][] = new int[rows][cols] ;
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < rows; i++ )
+        {
+            for (int j = 0; j < cols; j++) {
+                System.out.print("Enter the element of " + i + " row index and " + j + " column index.: ");
+                array[i][j] = sc.nextInt();
+            }
+        }
+        return array;
+
+    }
+
+
+    //    method to display matrix
+    public void matrix_display(int [][] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            System.out.print("\t\t\t\t\t");
+            for (int j = 0; j < array[i].length; j++)
+            {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+
+        }
+    }
+
+
+    //    method to multiply matrix
+    public int[][] scalar_product(int [][] matrix, int num)
+    {
+        int temp[][] = new int[matrix.length][matrix[0].length];
+        for (int i = 0; i < matrix.length; i++)
+        {
+            for (int j = 0; j <  matrix[i].length; j++)
+            {
+                temp[i][j] = num * matrix[i][j];
+            }
+        }
+        return temp;
+    }
+
+    //    main method
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+//        Taking array size input from user
+        System.out.print("Enter the number of rows u want in array: ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the number of columns u want in array: ");
+        int cols = sc.nextInt();
+
+//        creating object to use the methods
+        Q26 object = new Q26();
+
+//      creating array
+        System.out.println("\n\tEnter the elements of matrix1: ");
+        int matrix[][] = object.array_input(rows, cols);
+
+
+//       printing Matrix elements
+        System.out.println("\nMatrix 1 is: ");
+        object.matrix_display(matrix);
+
+//        multiplying matrix
+        System.out.println("\n\nEnter the Number which u want to multiply with matrix: ");
+        int num = sc.nextInt();
+        System.out.println("\nThe product of the" + num +"and matrixes is: \n");
+        int result[][] = object.scalar_product(matrix, num);
+        object.matrix_display(result);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 27. Write a program to create a take a string from user and print that string.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q27 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value in string: ");
+        String string = sc.next();
+        System.out.println("The value in the string is: " + string);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 28. Write a program to create an array of strings.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q28 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of string u want in an array: ");
+        int size = sc.nextInt();
+        String str_array[] = new String[size];
+
+//        taking user input string
+        System.out.println("Enter the strings in array: ");
+        for (int i = 0; i < str_array.length; i++)
+        {
+            System.out.print("Enter the string of " + i + " index: ");
+            str_array[i] = sc.next();
+        }
+
+//        printing the string array
+        System.out.println("The strings in the array are: ");
+        for (String str: str_array)
+            System.out.println(str);
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 29. Write a program to find length of a string.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q29 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        System.out.println("The length of the string is: " + string.length());
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+// 30. Write a program to copy one string to another string.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q30 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String string = sc.next();
+
+//        code copy to copy string
+        String string_copy_1 = string;
+        System.out.println("The copied string is \"" + string_copy_1 + "\" by assigned method.");
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 31. Write a program to concatenate two strings.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q31 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the string 1: ");
+        String string1 = sc.next();
+
+        System.out.print("Enter the string 2: ");
+        String string2 = sc.next();
+
+        String string3 = string1 + string2;
+        System.out.println("The value of string concatenation is: " + string3);
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 32. Write a program to compare two strings.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q32 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the string 1: ");
+        String string1 = sc.next();
+
+        System.out.print("Enter the string 2: ");
+        String string2 = sc.next();
+
+//        code to compare two strings
+        if (string1.length() != string2.length())
+        {
+            System.out.println("String are not equal");
+            System.exit(0);
+        }
+        for (int i = 0; i < string1.length(); i++)
+        {
+            if (string1.charAt(i) != string2.charAt(i))
+            {
+                System.out.println("Strings are not equal");
+                System.exit(0);
+            }
+
+        }
+        System.out.println("Both the strings are Equal.");
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 33. Write a program to convert lowercase string to uppercase.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q33 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        System.out.println("The string in uppercase is: " + string.toUpperCase());
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 34. Write a program to convert uppercase string to lowercase.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q34 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        System.out.println("The string in lowercase is: " + string.toLowerCase());
+
+
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 35. Write a program to toggle case of each character of a string.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q35 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        System.out.print("The toggled string is: ");
+
+        for (int i = 0 ; i < string.length(); i++)
+        {
+            if (Character.isLowerCase(string.charAt(i)))
+                System.out.print(Character.toUpperCase(string.charAt(i)));
+            else
+                System.out.print(Character.toLowerCase(string.charAt(i)));
+        }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 36. Write a program to find total number of alphabets, digits or special character im a string.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q36 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        int char_count = 0, digit_count = 0, special_count = 0;
+        for (int i = 0; i < string.length(); i++)
+        {
+            if (Character.isAlphabetic(string.charAt(i)))
+                char_count++;
+            else if (Character.isDigit(string.charAt(i)))
+                digit_count++;
+            else
+                special_count++;
+        }
+
+        System.out.println("The number of Alphabets are: " + char_count);
+        System.out.println("The number of digits are: " + digit_count);
+        System.out.println("The number of special character are: " + special_count);
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 37. Write a program to count total number of vowels and consonants in a string.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q37 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        int vowel_count = 0, consonent_count = 0;
+        for (int i = 0; i < string.length(); i++)
+        {
+            char temp = Character.toLowerCase(string.charAt(i));
+            if (temp == 'a' || temp == 'e' || temp == 'i' || temp == 'o' || temp == 'u' )
+                vowel_count++;
+            else
+                consonent_count++;
+        }
+        System.out.println("The Number of vowel are: " + vowel_count + " and consonents are:  " + consonent_count);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 38. Write a program to count total number of words in a string.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q38 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String string = sc.nextLine();
+
+        System.out.println("The number of words in the string: " + string.split(" ").length);
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 39. Write a program to find reverse of a string.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q39 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        StringBuilder string_builder=new StringBuilder(string);
+        System.out.println("The reverse of the string is: " + string_builder.reverse());
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// 40. Write a program to check whether a string is palindrome or not.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class Q40 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = sc.next();
+        StringBuilder string_builder=new StringBuilder(string);
+//        System.out.println(string_builder.reverse().toString().toLowerCase());
+//        System.out.println(string.toLowerCase());
+//        System.out.println(string.toLowerCase().equals(string_builder.reverse().toString().toLowerCase()));
+        if (string.toLowerCase().equals(string_builder.reverse().toString().toLowerCase()))
+            System.out.println("The string is palindrome.");
+        else
+            System.out.println("String is not palindrome.");
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 

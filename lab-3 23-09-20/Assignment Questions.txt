@@ -1,0 +1,101 @@
+BCA1317A02 Java Programming Lab
+
+ 
+
+Warm up with basics of Java
+Lab #3 (Due date: 23/09/2020 11:59 PM)
+Topics: Array and Strings
+Arrays
+
+1. Create an array of integer type in different ways.
+
+2. Create an array of integer type and store the values of float types. Report the error that you
+
+get.
+
+3. Create an array of character types. Can we convert this array into a String? If yes, please do.
+
+4. Write a program to create arrays of all the primitive types.
+
+5. Write a program to iterate over the array and print its elements. (Use for loop)
+
+6. Write a program to iterate over the array and print its elements. (Use while loop)
+
+7. Write a program to iterate over the array and print its elements. (Use for each loop)
+
+8. Write a program to print the elements of an integer/float array after doubling.
+
+9. Write a program that sums the elements of a char array.
+
+10. Find the length of an array.
+
+11. Write a method which takes an array as a parameter and returns the sum of all of its elements.
+
+12. Write a program to access an element of the array beyond its length. Report the
+error/exception if any.
+
+13. Write a program to copy all elements of one array into another array.
+
+14. Write a program to find the frequency of each element in the array.
+
+15. Write a program to print the duplicate elements of an array.
+
+16. Write a program to print the elements of an array in reverse order.
+
+17. Write a program to print the elements of an array present on even position.
+
+18. Write a program to print the elements of an array present on odd position.
+
+------------------------------------------------------------------------------------------
+
+
+2D Array, Zagged Array and Matrix
+
+19. Write a program to create a print the elements of a 2D array of float type.
+
+20. Write a program to create a zagged array of integer type.
+
+21. Write a program to find the frequency of odd & even numbers in the given matrix
+22. Write a program to find the sum of each row and each column of a matrix
+
+23. Write a program to determine whether two matrices are equal
+
+24. Write a program to add two matrices
+
+25. Write a program to subtract the two matrices.
+
+26. Write a program to multiply a matrix with a scaler.
+
+
+---------------------------------------------------------------------------------------------------
+
+    Strings (String, StringBuffer and String Builder)
+
+Note: Choose the String/StringBuffer/StringBuilder appropriately while create a string for solving the
+problems.
+
+
+27. Write a program to create a take a string from user and print that string.
+28. Write a program to create an array of strings.
+
+29. Write a program to find length of a string.
+
+30. Write a program to copy one string to another string.
+
+31. Write a program to concatenate two strings.
+
+32. Write a program to compare two strings.
+
+33. Write a program to convert lowercase string to uppercase.
+
+34. Write a program to convert uppercase string to lowercase.
+
+35. Write a program to toggle case of each character of a string.
+
+36. Write a program to find total number of alphabets, digits or special character im a string.
+37. Write a program to count total number of vowels and consonants in a string.
+38. Write a program to count total number of words in a string.
+
+39. Write a program to find reverse of a string.
+
+40. Write a program to check whether a string is palindrome or not.
