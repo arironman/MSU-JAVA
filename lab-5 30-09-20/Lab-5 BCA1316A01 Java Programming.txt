@@ -1,0 +1,79 @@
+BCA1317A02 Java Programming Lab
+
+Lab #5 (Due date: 30/09/2020 11:59 PM)
+
+Topics: Classes & Objects, Methods and Constructors
+
+1. What's wrong with the following program?
+
+public class SomethingIsWrong {
+public static void main(String[] args) {
+Rectangle myRect; //something missing here
+myRect.width = 40;
+myRect.height = 50;
+System.out.printin("myRect's area is " + myRect.area());
+
+2. Fix the program called SomethingIsWrong shown in Question 1 by adding appropriate fields
+and methods to make is function.
+
+3. Complete the program called SomethingIsWrong shown in Question 1 by adding appropriate
+fields and methods to make is function.
+
+4. Given the following class, called NumberHolder, write some code that creates an
+instance of the class, initializes its two member variables, and then displays the value
+of each member variable.
+
+public class NumberHolder {
+public int anInt;
+public float aFloat;
+-------------------------------------------------------------------------
+Q5.
+i. Creates a Student class, take rolINo and name as a field of this class, and print the
+values of these fields in main class without assigning values to the fileds.
+
+ii. Assign the value of id as 'your rollNo' and that of name as "your name" by creating an
+object of the class Student.
+
+iii. Assign the value of id as ‘your rollNo' and that of name as "your name" by creating a
+method (not the constructor) of the class Student.
+
+iv. Assign and print the roll number, and name of two students respectively by creating
+two objects of class ‘Student’.
+
+v. Assign and print the roll number, and name of five students respectively by creating
+five objects of class 'Student’.
+
+vi. Add getter and setter methods in the previous program for rolINo and name.
+
+vii. Add an empty default constructor in the previous program.
+
+viii. Add a parameterised constructor in the previous program and initialize the values of
+rollNo and name.
+--------------------------------------------------------------------------------------
+Q6.
+i. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5
+units by creating a class named 'Triangle' without any parameter in its constructor.
+
+ii. Create a class Rectangle and calculate the area of the rectangle of 3 rectangles.
+
+iii. In the previous program, check that an object is the instance of the class Rectangle or
+not.
+
+iv. In the previous program, create the object with var.
+
+v. In the previous program, create an anonymous object.
+---------------------------------------------------------------------
+Q7.
+
+i. Write a program that would print the information (name, year of joining, salary,
+address) of three employees by creating a class named ‘Employee’. The output should
+be as follows:
+
+Name Year of joining Address
+
+Robert 1994 64C- WallsStreat
+Sam 2000 68D- WallsStreat
+John 1999 26B- WallsStreat
+
+[Hint: use System.out.printfQ) for formatted output]
+

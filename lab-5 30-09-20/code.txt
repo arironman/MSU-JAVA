@@ -1,0 +1,367 @@
+
+		Name : Anurag Rai
+
+package com.msubaroda.Anurag.assignment;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+    }
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+//4. Given the following class, called NumberHolder, write some code that creates an
+//instance of the class, initializes its two member variables, and then displays the value
+//of each member variable.
+//
+//public class NumberHolder {
+//public int anInt;
+//public float aFloat;
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+public class NumberHolder {
+    public int anInt;
+    public float aFloat;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        NumberHolder obj = new NumberHolder();
+        System.out.print("Enter the value of anInt variable: ");
+        obj.anInt = sc.nextInt();
+        System.out.print("Enter the value of aFloat variable: ");
+        obj.aFloat = sc.nextFloat();
+        System.out.println("The value of anInt is: " + obj.anInt );
+        System.out.println("The value of aFloat is: " + obj.aFloat);
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+//1. What's wrong with the following program?
+//
+//public class SomethingIsWrong {
+//public static void main(String[] args) {
+//Rectangle myRect; //something missing here
+//myRect.width = 40;
+//myRect.height = 50;
+//System.out.printin("myRect's area is " + myRect.area());
+//
+//2. Fix the program called SomethingIsWrong shown in Question 1 by adding appropriate fields
+//and methods to make is function.
+//
+//3. Complete the program called SomethingIsWrong shown in Question 1 by adding appropriate
+//fields and methods to make is function.
+
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+class Rectangle
+{
+    int width;
+    int height;
+    public int area()
+    {
+        return height * width;
+    }
+}
+
+// I use Q1_to_Q3 as a class name instead of SomethingIsWrong
+// Because it is easy to manage file according to question numbers
+public class Q1_to_Q3 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Rectangle myRect = new Rectangle(); //something missing here
+        myRect.width = 40;
+        myRect.height = 50;
+        System.out.println("myRect's area is " + myRect.area());
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+//Q6.
+//i. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5
+//units by creating a class named 'Triangle' without any parameter in its constructor.
+//
+//ii. Create a class Rectangle and calculate the area of the rectangle of 3 rectangles.
+//
+//iii. In the previous program, check that an object is the instance of the class Rectangle or
+//not.
+//
+//iv. In the previous program, create the object with var.
+//
+//v. In the previous program, create an anonymous object.
+
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+class Triangle
+{
+    int side1, side2, side3;
+
+    //i. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5
+    //units by creating a class named 'Triangle' without any parameter in its constructor.
+    public Triangle()
+    {
+
+    }
+
+//    easy to understand while creating anonymous object
+    public Triangle(int side_1, int side_2, int side_3)
+    {
+        side1 = side_1;
+        side2 = side_2;
+        side3 = side_3;
+        System.out.println("Sides are: " + side1 + " " + side2 + " " + side3);
+    }
+}
+
+class Rectangle_
+{
+    int length, width;
+
+    //ii. Create a class Rectangle and calculate the area of the rectangle of 3 rectangles.
+    public int area()
+    {
+        return length * width;
+    }
+
+}
+
+public class Q6 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+
+        //v. In the previous program, create an anonymous object.
+        new Triangle(1,2,3);
+        //iv. In the previous program, create the object with var.
+        Rectangle_ obj = new Rectangle_();
+        obj.length = 10;
+        obj.width = 20;
+        System.out.println("The Area Of The Rectangle Is: " + obj.area());
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// Q7.
+//
+//i. Write a program that would print the information (name, year of joining, salary,
+//address) of three employees by creating a class named ‘Employee’. The output should
+//be as follows:
+//
+//Name Year of joining Address
+//
+//Robert 1994 64C- WallsStreat
+//Sam 2000 68D- WallsStreat
+//John 1999 26B- WallsStreat
+//
+//[Hint: use System.out.printfQ) for formatted output]
+package com.msubaroda.Anurag.assignment;
+
+import org.w3c.dom.ls.LSParser;
+
+import java.util.Scanner;
+
+class Employee
+{
+    String Name, Address, Salary;
+    long YearOfJoining;
+
+    public Employee(String name, String address, String salary, long yearOfJoining)
+    {
+        Name = name;
+        Address = address;
+        Salary = salary;
+        YearOfJoining = yearOfJoining;
+    }
+
+    public void display_data()
+    {
+        String Space= " ";
+        int name_len = 14 - Name.length();
+        System.out.print(Name);
+        for (int i = 0; i < name_len  ; i++)
+            System.out.print(Space);
+        int salary_len = 14 - Salary.length();
+        System.out.print(Salary);
+        for (int i = 0; i < salary_len ; i++)
+            System.out.print(Space);
+        System.out.print(YearOfJoining);
+        for (int i = 0; i < 3 ; i++)
+            System.out.print(Space);
+        System.out.println(Address);
+    }
+
+}
+
+
+public class Q7 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Number of Employee");
+        int num = sc.nextInt();
+        String name , address, salary;
+        long year;
+        Employee obj[] = new Employee[num];
+        for (int i = 0; i < num ; i++)
+        {
+            System.out.println("Enter the Data Of Employee " + i+1);
+            System.out.print("Enter the Name: ");
+            name = sc.next();
+            System.out.print("Emter the Salary: ");
+            salary = sc.next();
+            System.out.print("Enter the Address: ");
+            address = sc.next();
+            System.out.print("Enter the Year Of Joining: ");
+            year = sc.nextLong();
+            obj[i] = new Employee(name, address, salary, year);
+
+        }
+
+        System.out.println("Name<-------->Salary<-->Year<->Address");
+        for (int i = 0; i < num ; i++)
+        {
+            obj[i].display_data();
+        }
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+// Q5.
+package com.msubaroda.Anurag.assignment;
+
+import java.util.Scanner;
+
+//i. Creates a Student class, take rolINo and name as a field of this class, and print the
+//values of these fields in main class without assigning values to the fileds.
+public class Student {
+    Scanner sc = new Scanner(System.in);
+
+
+    int rollNo;
+    String name;
+
+    public void print_value()
+    {
+        System.out.println("The Roll Number is: " + rollNo);
+        System.out.println("The Name is: " + name);
+    }
+
+    //ii. Assign the value of id as 'your rollNo' and that of name as "your name" by creating an
+    //object of the class Student.
+    //iii. Assign the value of id as ‘your rollNo' and that of name as "your name" by creating a
+    //method (not the constructor) of the class Student.
+
+    public void assign_value()
+    {
+        System.out.print("Enter the Roll Number: ");
+        rollNo = sc.nextInt();
+        System.out.print("Enter the Name: ");
+        name = sc.next();
+        System.out.println("Roll Number And Name Are Added Sucessfully !");
+    }
+
+
+    //iv. Assign and print the roll number, and name of two students respectively by creating
+    //two objects of class ‘Student’.
+    public void assign_display()
+    {
+        System.out.print("Enter the Roll Number: ");
+        rollNo = sc.nextInt();
+        System.out.print("Enter the Name: ");
+        name = sc.next();
+        System.out.println("Roll Number And Name Are Added Sucessfully !");
+        System.out.println("The Roll Number is: " + rollNo);
+        System.out.println("The Name is: " + name);
+
+    }
+
+    //vii. Add an empty default constructor in the previous program.
+    public Student()
+    {
+
+    }
+
+//viii. Add a parameterised constructor in the previous program and initialize the values of
+//rollNo and name.
+        public Student(String s_name, int Roll)
+        {
+            name = s_name;
+            rollNo = Roll;
+        }
+
+
+    //vi. Add getter and setter methods in the previous program for rolINo and name.
+//     getter for name
+    public String getName()
+    {
+        return name;
+    }
+
+    public int getRollNo()
+    {
+        return rollNo;
+    }
+
+//    setter
+    public void setName(String new_name)
+    {
+        name = new_name;
+    }
+    public void setRollNo(int new_roll)
+    {
+        rollNo = new_roll;
+    }
+
+    public static void main(String[] args) {
+
+//v. Assign and print the roll number, and name of five students respectively by creating
+//five objects of class 'Student’.
+    Student obj[] = new Student[5];
+    for (int i = 0; i < 5 ; i++)
+    {
+        obj[i] = new Student();
+        System.out.println("Enter the value of Student " + i+1);
+        obj[i].assign_value();
+        obj[i].print_value();
+
+    }
+
+
+    }
+
+}
+----------------------------------------------------------------------------------------------------
+ 
+ 
+ 
