@@ -1,0 +1,3294 @@
+
+                                             NAME - ANURAG RAI
+
+
+---------------------------------------------------------------------------------------------------------------------
+                                               ARRAY LIST
+
+//
+package com.msubaroda.Anurag.assignment;
+import java.util.*;
+
+public class array_list {
+
+
+    //  Map is used to store multiple arrayList
+    Map<String, ArrayList<String>> arrays = new HashMap<>();
+
+
+    Scanner sc = new Scanner(System.in);
+    //    method to create array
+    public void create_array()
+    {
+        System.out.print("Please Enter a name for array: ");
+        String name  = sc.next();
+        arrays.put (name,new ArrayList<> ());
+        System.out.println("Array is created sucessfully !");
+    }
+
+    //    method to show array
+    public void show_array()
+    {
+        System.out.print("Enter the name of array whic u wanna to display: ");
+        String name = sc.next();
+        System.out.print("The Elements of the array " + name + " are: ");
+        System.out.println(arrays.get(name));
+    }
+
+    //    method to add element in array
+    public void append_element()
+    {
+        System.out.print("Enter the name of the array: ");
+        String array_name = sc.next();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        arrays.get(array_name).add(element);
+        System.out.println(element + " is added sucessfully in " + array_name);
+    }
+
+
+    //    add element by specifing index
+    public void add()
+    {
+        System.out.print("Enter the name of the array: ");
+        String array_name = sc.next();
+        System.out.print("Enter the index: ");
+        int index = sc.nextInt();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        arrays.get(array_name).add(index, element);
+        System.out.println(element + " is added sucessfully in " + array_name);
+    }
+
+    //    delete array element
+    public void remove_element()
+    {
+        System.out.print("Enter the array name: ");
+        String array_name = sc.next();
+        System.out.print("The elements of the array are: ");
+        System.out.println(arrays.get(array_name));
+        System.out.print("\n Enter the index of the element which u want to remove: ");
+        int index = sc.nextInt();
+        arrays.get(array_name).remove(index);
+        System.out.println("The element removed sucessfully.");
+    }
+
+
+    //    update element of array
+    public void update_element()
+    {
+        System.out.print("Enter the array name: ");
+        String array_name = sc.next();
+        System.out.print("The elements of the array are: ");
+        System.out.println(arrays.get(array_name));
+        System.out.print("Enter the index of element which u want to update: ");
+        int index = sc.nextInt();
+        System.out.print("Enter the value of new element: ");
+        String new_element = sc.next();
+        arrays.get(array_name).set(index, new_element);
+        System.out.println("Array get updated sucessfully.");
+    }
+
+    //    length of array
+    public void length_array()
+    {
+        System.out.print("Enter the array name: ");
+        String array_name = sc.next();
+        System.out.println("The length of the array is: " + arrays.get(array_name).size());
+    }
+
+
+    //    iterate through all element
+    public void iterate_array()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        System.out.println("Index ----------> Element");
+        for (int i = 0; i < arrays.get(array_name).size(); i++)
+        {
+            System.out.println( i + "     ----------> " + arrays.get(array_name).get(i));
+        }
+    }
+
+
+    //    get element of specific index
+    public void element_index()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        System.out.print("Enter the Index Number: ");
+        int index = sc.nextInt();
+        System.out.println("Element at " + index + " is: " + arrays.get(array_name).get(index));
+    }
+
+
+    //    search element in array
+    public void search_element()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        if (arrays.get(array_name).contains(element))
+        {
+            System.out.println("The element is present in array.");
+        }
+        else
+        {
+            System.out.println("The element is not found.");
+        }
+    }
+
+
+    //    sort an array
+    public void sort_array()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        Collections.sort(arrays.get(array_name));
+        System.out.println("The array is sucessfully sorted.");
+    }
+
+
+    //    copy array
+    public void copy_array()
+    {
+        System.out.print("Enter the name of array which elements u want to copy: ");
+        String primary_array = sc.next();
+        System.out.print("Enter the name of new array in which u want copy: ");
+        String secondary_array = sc.next();
+//        Collections.copy(arrays.get(primary_array), arrays.get(secondary_array));
+//        System.out.println(arrays.get(secondary_array));
+//        copy is not working in arrayList so we clone array wich means similar to copy
+        arrays.put(secondary_array, (ArrayList<String>)arrays.get(primary_array).clone() );
+        System.out.println("Array copied sucessfully. ");
+    }
+
+
+    //    shuffle the elements
+    public void shuffle_elements()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        Collections.shuffle(arrays.get(array_name));
+        System.out.println("Array Shuffle sucessfully.");
+    }
+
+    //    reverse the elements of the array
+    public void reverse_elements()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        Collections.reverse(arrays.get(array_name));
+        System.out.println("Elements of the Array are sucessfully reversed.");
+    }
+
+
+    //    slice the array element
+    public void slice_array()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        System.out.print("Enter the starting index: ");
+        int start = sc.nextInt();
+        System.out.print("Enter the ending index: ");
+        int end = sc.nextInt();
+        List<String> sliced_array = arrays.get(array_name).subList(start, end);
+        System.out.println("The sliced array list is: " + sliced_array);
+    }
+
+
+    //    compare two array list
+    public void compare_arrays()
+    {
+        System.out.print("Enter the name of first array: ");
+        String array1 = sc.next();
+        System.out.print("Enter the name of second array: ");
+        String array2 = sc.next();
+        int length;
+        if (arrays.get(array1).size() == arrays.get(array2).size())
+        {
+            length = arrays.get(array1).size();
+        }
+        else
+        {
+            System.out.println("Arrays are not equal.");
+            length = (arrays.get(array1).size() > arrays.get(array2).size())? arrays.get(array2).size(): arrays.get(array1).size();
+        }
+
+        for (int i = 0; i < length; i++)
+        {
+            if (arrays.get(array1).get(i) == arrays.get(array2).get(i))
+                System.out.println("Elements of index " + i + " are same.");
+            else
+                System.out.println("Elements  of index " + i + " are not same.");
+        }
+
+    }
+
+
+    //    swap elements in array
+    public void swap_elements()
+    {
+        System.out.print("Enter the array name: ");
+        String array_name = sc.next();
+        System.out.print("Enter the index of first element: ");
+        int index1 = sc.nextInt();
+        System.out.print("Enter the index of second element: ");
+        int index2 = sc.nextInt();
+        Collections.swap(arrays.get(array_name), index1, index2);
+        System.out.println("Element swap sucessfully ! ");
+    }
+
+
+    //    join two array
+    public void join_array()
+    {
+        System.out.print("Enter the name of first array: ");
+        String array1 = sc.next();
+        System.out.print("Enter the name of second array: ");
+        String array2 = sc.next();
+        System.out.print("Enter the name of new array list: ");
+        String new_array = sc.next();
+        arrays.put (new_array,new ArrayList<> ());
+        arrays.get(new_array).addAll(arrays.get(array1));
+        arrays.get(new_array).addAll(arrays.get(array2));
+        System.out.println("All the Elements are addes sucessfully in new array.");
+    }
+
+
+    //    clone the arraylist
+    public void clone_array()
+    {
+        System.out.print("Enter the name of new array list: ");
+        String new_array = sc.next();
+        System.out.print("Enter the name of array list with whom u want to clone: ");
+        String array_main = sc.next();
+        arrays.put(new_array, (ArrayList<String>)arrays.get(array_main).clone() );
+//        arrays.get(new_array) = (ArrayList)arrays.get(array_main).clone();
+
+    }
+
+
+
+    //    empty an array list
+    public void empty_array()
+    {
+        System.out.print("Enter the name of the array: ");
+        String array_name = sc.next();
+        arrays.get(array_name).clear();
+        System.out.println("The array list is empty now.");
+    }
+
+
+    //    check empty or not
+    public void empty_check()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        String message = (arrays.get(array_name).isEmpty())?"Array List is Empty": "Array List is not Empty";
+        System.out.println(message);
+    }
+
+
+    //   trim array to current size
+    public void trim_to_size()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        arrays.get(array_name).trimToSize();
+        System.out.println("The array is getted trimmed to its current size.");
+    }
+
+    //   increase the size of array
+    public void resize()
+    {
+        System.out.print("Enter the name of array: ");
+        String array_name = sc.next();
+        System.out.print("Enter the new size of array: ");
+        int size = sc.nextInt();
+        arrays.get(array_name).ensureCapacity(size);
+        System.out.println("The array is resized.");
+    }
+
+
+    public static void main(String[] args)
+    {
+        //       create the object of array to access the methods
+        array_list object = new array_list();
+        while (true)
+        {
+            System.out.println("\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t Menu");
+            System.out.println("Press ---------------> Option                              ||    Press ---------------> Option");
+            System.out.println(" 1 ------------------> To Create Array                     ||     13 -----------------> To Shuffle The Elements Of Array ");
+            System.out.println(" 2 ------------------> To Show Array                       ||     14 -----------------> To Reverse The Elements Of Array ");
+            System.out.println(" 3 ------------------> To Append Element                   ||     15 -----------------> To Slice The Array ");
+            System.out.println(" 4 ------------------> To Add Element At Specific Index    ||     16 -----------------> To Compare The Elements Of Array ");
+            System.out.println(" 5 ------------------> To Remove Element                   ||     17------------------> To Swap The Element ");
+            System.out.println(" 6 ------------------> To Update Element                   ||     18 -----------------> To Join Two Array And Get As New Array ");
+            System.out.println(" 7 ------------------> To Get The Length Of Array          ||     19 -----------------> To Clone The Array ");
+            System.out.println(" 8 ------------------> To Iterate Through All The Elements ||     20 -----------------> To Empty Array ");
+            System.out.println(" 9 ------------------> To Get Element Of Specifix Index    ||     21 -----------------> To Check The Array Is Empty Or Not");
+            System.out.println(" 10 -----------------> To Search Element                   ||     22 -----------------> To Trim The Size Of Array To Its Current Length");
+            System.out.println(" 11 -----------------> To Sort Array                       ||     23 -----------------> To Resize The Array ");
+            System.out.println(" 12 -----------------> To Copy Array                       ||     24 -----------------> To Exit The Program ");
+
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter ur Choice: ");
+            int choice = sc.nextInt();
+            switch (choice)
+            {
+                case 1:      object.create_array();
+                    break;
+                case 2:      object.show_array();
+                    break;
+                case 3:      object.append_element();
+                    break;
+                case 4:      object.add();
+                    break;
+                case 5:      object.remove_element();
+                    break;
+                case 6:      object.update_element();
+                    break;
+                case 7:      object.length_array();
+                    break;
+                case 8:      object.iterate_array();
+                    break;
+                case 9:      object.element_index();
+                    break;
+                case 10:     object.search_element();
+                    break;
+                case 11:     object.sort_array();
+                    break;
+                case 12:     object.copy_array();
+                    break;
+                case 13:     object.shuffle_elements();
+                    break;
+                case 14:     object.reverse_elements();
+                    break;
+                case 15:     object.slice_array();
+                    break;
+                case 16:     object.compare_arrays();
+                    break;
+                case 17:     object.swap_elements();
+                    break;
+                case 18:     object.join_array();
+                    break;
+                case 19:     object.clone_array();
+                    break;
+                case 20:     object.empty_array();
+                    break;
+                case 21:     object.empty_check();
+                    break;
+                case 22:     object.trim_to_size();
+                    break;
+                case 23:     object.resize();
+                    break;
+                case 24:     System.exit(0);
+                default:
+                    System.out.println("Try Again !");
+            }
+        }
+
+
+    }
+
+}
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+                                               LINKED LIST
+
+
+//
+package com.msubaroda.Anurag.assignment;
+
+import java.util.*;
+
+public class linked_exercise {
+
+    //  Map is used to store multiple linkedList
+    Map<String, LinkedList<String>> linked = new HashMap<>();
+
+    //  Map is used to store multiple array
+//    used while converting linked list to array
+    Map<String, List<String>> arrays = new HashMap<>();
+
+
+    Scanner sc = new Scanner(System.in);
+
+    //    method to create linked list
+    public void create_linked_list()
+    {
+        System.out.print("Please Enter a name for Linked List: ");
+        String name  = sc.next();
+        linked.put (name,new LinkedList<>());
+        System.out.println("Linked List is created sucessfully !");
+    }
+
+    //    method to show Linked List
+    public void show_all_elements()
+    {
+        System.out.print("Enter the name of Linked List which u wanna to display: ");
+        String name = sc.next();
+        System.out.print("The Elements of the linked " + name + " are: ");
+        System.out.println(linked.get(name));
+    }
+
+    //    method to add element in linked list
+    public void append_element()
+    {
+        System.out.print("Enter the name of the Linked List: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        linked.get(linked_name).add(element);
+        System.out.println(element + " is added sucessfully in " + linked_name);
+    }
+
+
+    //    add element by specifing index
+    public void add()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the index: ");
+        int index = sc.nextInt();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        linked.get(linked_name).add(index, element);
+        System.out.println(element + " is added sucessfully in " + linked_name);
+    }
+
+//    add element from first
+    public void add_first()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        linked.get(linked_name).addFirst(element);
+        System.out.println(element + " is added sucessfully in " + linked_name);
+    }
+
+
+    //    add element from first
+    public void add_last()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        linked.get(linked_name).addLast(element);
+        System.out.println(element + " is added sucessfully in " + linked_name);
+    }
+
+
+
+    //    first element of linked list
+    public void first_element()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        String element = linked.get(linked_name).getFirst();
+        System.out.println("The first Element of the " + linked_name + " Linked List is: " + element);
+    }
+
+
+
+    //    last element of linked list
+    public void last_element()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        String element = linked.get(linked_name).getLast();
+        System.out.println("The last Element of the " + linked_name + " Linked List is: " + element);
+    }
+
+
+
+
+    //   remove first element of linked list
+    public void remove_first_element()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        linked.get(linked_name).removeFirst();
+        System.out.println("The first Element of the " + linked_name + " Linked List is Sucessfully removed. ");
+    }
+
+
+
+    //   remove last element of linked list
+    public void remove_last_element()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        linked.get(linked_name).getLast();
+        System.out.println("The last Element of the " + linked_name + " Linked List is Sucessfully removed. ");
+    }
+
+
+
+
+    //    delete linked element
+    public void remove_element_by_index()
+    {
+        System.out.print("Enter the linked list name: ");
+        String linked_name = sc.next();
+        System.out.print("The elements of the linked list are: ");
+        System.out.println(linked.get(linked_name));
+        System.out.print("\n Enter the index of the element which u want to remove: ");
+        int index = sc.nextInt();
+        linked.get(linked_name).remove(index);
+        System.out.println("The element removed sucessfully.");
+    }
+
+
+//    remove element by element value
+    public void remove_element_by_value()
+    {
+        System.out.print("Enter the linked list name: ");
+        String linked_name = sc.next();
+        System.out.print("The elements of the linked list are: ");
+        System.out.println(linked.get(linked_name));
+        System.out.print("\n Enter the value of the element which u want to remove: ");
+        String element = sc.next();
+        linked.get(linked_name).remove(element);
+        System.out.println("The element removed sucessfully.");
+    }
+
+
+
+    //    update element of linked list
+    public void update_element()
+    {
+        System.out.print("Enter the linked list name: ");
+        String linked_name = sc.next();
+        System.out.print("The elements of the linked are: ");
+        System.out.println(linked.get(linked_name));
+        System.out.print("Enter the index of element which u want to update: ");
+        int index = sc.nextInt();
+        System.out.print("Enter the value of new element: ");
+        String new_element = sc.next();
+        linked.get(linked_name).set(index, new_element);
+        System.out.println("linked list get updated sucessfully.");
+    }
+
+    //    length of linked
+    public void length_linked()
+    {
+        System.out.print("Enter the linked name: ");
+        String linked_name = sc.next();
+        System.out.println("The length of the linked list is: " + linked.get(linked_name).size());
+    }
+
+
+    //    iterate through all element
+    public void iterate_linked()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        System.out.println("Index ----------> Element");
+        for (int i = 0; i < linked.get(linked_name).size(); i++)
+        {
+            System.out.println( i + "     ----------> " + linked.get(linked_name).get(i));
+        }
+    }
+
+//    iterate from specific position
+    public void iterate_specific_index()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the index from where u want to start the iteration: ");
+        int index = sc.nextInt();
+        Iterator iter = linked.get(linked_name).listIterator(index);
+        while (iter.hasNext())
+            System.out.println(iter.next());
+    }
+
+
+//    iterate in rverse order
+    public void iterate_reverse()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        Iterator iter = linked.get(linked_name).descendingIterator();
+        while (iter.hasNext())
+            System.out.println(iter.next());
+    }
+
+
+    //    get element of specific index
+    public void element_index()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the Index Number: ");
+        int index = sc.nextInt();
+        System.out.println("Element at " + index + " is: " + linked.get(linked_name).get(index));
+    }
+
+
+    //    search element in linked list
+    public void search_element()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the element: ");
+        String element = sc.next();
+        if (linked.get(linked_name).contains(element))
+        {
+            System.out.println("The element is present in linked list.");
+        }
+        else
+        {
+            System.out.println("The element is not found.");
+        }
+    }
+
+
+    //    sort an linked list
+    public void sort_linked()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        Collections.sort(linked.get(linked_name));
+        System.out.println("The linked list is sucessfully sorted.");
+    }
+
+
+    //    copy linked
+    public void copy_linked()
+    {
+        System.out.print("Enter the name of linked which elements u want to copy: ");
+        String primary_linked = sc.next();
+        System.out.print("Enter the name of new linked in which u want copy: ");
+        String secondary_linked = sc.next();
+//        Collections.copy(linked.get(primary_linked), linked.get(secondary_linked));
+//        System.out.println(linked.get(secondary_linked));
+//        copy is not working in linkedList so we clone linked list which means similar to copy
+        linked.put(secondary_linked, (LinkedList<String>)linked.get(primary_linked).clone() );
+        System.out.println("linked list copied sucessfully. ");
+    }
+
+
+    //    shuffle the elements of linked list
+    public void shuffle_elements()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        Collections.shuffle(linked.get(linked_name));
+        System.out.println("linked list Shuffle sucessfully.");
+    }
+
+    //    reverse the elements of the linked
+    public void reverse_elements()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        Collections.reverse(linked.get(linked_name));
+        System.out.println("Elements of the linked list are sucessfully reversed.");
+    }
+
+
+    //    slice the linked list element
+    public void slice_linked()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the starting index: ");
+        int start = sc.nextInt();
+        System.out.print("Enter the ending index: ");
+        int end = sc.nextInt();
+        List<String> sliced_linked = linked.get(linked_name).subList(start, end);
+        System.out.println("The sliced linked list is: " + sliced_linked);
+    }
+
+
+    //    compare two linked list
+    public void compare_linked()
+    {
+        System.out.print("Enter the name of first linked: ");
+        String linked1 = sc.next();
+        System.out.print("Enter the name of second linked: ");
+        String linked2 = sc.next();
+        int length;
+        if (linked.get(linked1).size() == linked.get(linked2).size())
+        {
+            length = linked.get(linked1).size();
+        }
+        else
+        {
+            System.out.println("linked are not equal.");
+            length = (linked.get(linked1).size() > linked.get(linked2).size())? linked.get(linked2).size(): linked.get(linked1).size();
+        }
+
+        for (int i = 0; i < length; i++)
+        {
+            if (linked.get(linked1).get(i) == linked.get(linked2).get(i))
+                System.out.println("Elements of index " + i + " are same.");
+            else
+                System.out.println("Elements  of index " + i + " are not same.");
+        }
+
+    }
+
+
+    //    swap elements in linked list
+    public void swap_elements()
+    {
+        System.out.print("Enter the linked list name: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the index of first element: ");
+        int index1 = sc.nextInt();
+        System.out.print("Enter the index of second element: ");
+        int index2 = sc.nextInt();
+        Collections.swap(linked.get(linked_name), index1, index2);
+        System.out.println("Element swap sucessfully ! ");
+    }
+
+
+    //    join two linked list
+    public void join_linked()
+    {
+        System.out.print("Enter the name of first linked list: ");
+        String linked1 = sc.next();
+        System.out.print("Enter the name of second linked list: ");
+        String linked2 = sc.next();
+        System.out.print("Enter the name of new linked list: ");
+        String new_linked = sc.next();
+        linked.put (new_linked,new LinkedList<> ());
+        linked.get(new_linked).addAll(linked.get(linked1));
+        linked.get(new_linked).addAll(linked.get(linked2));
+        System.out.println("All the Elements are added sucessfully in new linked list.");
+    }
+
+
+    //    clone the linked list
+    public void clone_linked()
+    {
+        System.out.print("Enter the name of new linked list: ");
+        String new_linked = sc.next();
+        System.out.print("Enter the name of linked list with whom u want to clone: ");
+        String linked_main = sc.next();
+        linked.put(new_linked, (LinkedList<String>)linked.get(linked_main).clone() );
+//        linked.get(new_linked) = (linkedList)linked.get(linked_main).clone();
+        System.out.println("Linked list clone sucessfully.");
+    }
+
+
+
+    //    empty an linked list
+    public void empty_linked()
+    {
+        System.out.print("Enter the name of the linked list: ");
+        String linked_name = sc.next();
+        linked.get(linked_name).clear();
+        System.out.println("The linked list is empty now.");
+    }
+
+
+    //    check empty or not
+    public void empty_check()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        String message = (linked.get(linked_name).isEmpty())?"linked List is Empty": "linked List is not Empty";
+        System.out.println(message);
+    }
+
+
+
+    //    convert linked list to array
+    public void linked_list_to_array()
+    {
+        System.out.print("Enter the name of linked list: ");
+        String linked_name = sc.next();
+        System.out.print("Enter the name of new array: ");
+        String array_name = sc.next();
+        arrays.put (array_name,new ArrayList<String>(linked.get(linked_name)));
+    }
+
+
+
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        //       create the object of class linked list to access the methods
+        linked_exercise object = new linked_exercise();
+        while (true)
+        {
+            System.out.println("\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t Menu");
+            System.out.println("Press ---------------> Option                              ||    Press ---------------> Option");
+            System.out.println(" 1 ------------------> To Create Linked List               ||     16 -----------------> To Iterate Starting From Specific Index ");
+            System.out.println(" 2 ------------------> To Show Linked List                 ||     17 -----------------> To Iterate Reverse ");
+            System.out.println(" 3 ------------------> To Append Linked List               ||     18 -----------------> To Get The Element By Index ");
+            System.out.println(" 4 ------------------> To Add Element At Specific Index    ||     19 -----------------> To Search The Element In Linked List ");
+            System.out.println(" 5 ------------------> To Add Element At First             ||     20------------------> To Sort The Elements Of Linked List ");
+            System.out.println(" 6 ------------------> To Add Element At Last              ||     21 -----------------> To Copy The Linked List ");
+            System.out.println(" 7 ------------------> To Show First Element               ||     22 -----------------> To Shuffle The Elements Of Linked List ");
+            System.out.println(" 8 ------------------> To Show Last Element                ||     23 -----------------> To Reverse The Elements Of The Linked List ");
+            System.out.println(" 9 ------------------> To Remove First Element             ||     24 -----------------> To Slice The Linked List");
+            System.out.println(" 10 -----------------> To Remove Last Element              ||     25 -----------------> To Compare The Linked Lists");
+            System.out.println(" 11 -----------------> To Remove Element By Index          ||     26 -----------------> To Swap The Elements Of Linked List ");
+            System.out.println(" 12 -----------------> To Remove Element By Value          ||     27 -----------------> To Join The Two Linked List ");
+            System.out.println(" 13 -----------------> To Update Element                   ||     28 -----------------> To Clone The Linked List ");
+            System.out.println(" 14 -----------------> To Get The Length Of Linked List    ||     29 -----------------> To Empty The Linked List ");
+            System.out.println(" 15 -----------------> To Iterate Over Linked List         ||     30 -----------------> To Check The Linked List Is Empty Or Not ");
+            System.out.println(" 0 ------------------> To Exit The Program                 ||     31 -----------------> To Convert The Linked List Into Array. ");
+
+
+
+//            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter ur Choice: ");
+            int choice = sc.nextInt();
+            switch (choice)
+            {
+                case 1:      object.create_linked_list();
+                    break;
+                case 2:      object.show_all_elements();
+                    break;
+                case 3:      object.append_element();
+                    break;
+                case 4:      object.add();
+                    break;
+                case 5:      object.add_first();
+                    break;
+                case 6:      object.add_last();
+                    break;
+                case 7:      object.first_element();
+                    break;
+                case 8:      object.last_element();
+                    break;
+                case 9:      object.remove_first_element();
+                    break;
+                case 10:     object.remove_last_element();
+                    break;
+                case 11:     object.remove_element_by_index();
+                    break;
+                case 12:     object.remove_element_by_value();
+                    break;
+                case 13:     object.update_element();
+                    break;
+                case 14:     object.length_linked();
+                    break;
+                case 15:     object.iterate_linked();
+                    break;
+                case 16:     object.iterate_specific_index();
+                    break;
+                case 17:     object.iterate_reverse();
+                    break;
+                case 18:     object.element_index();
+                    break;
+                case 19:     object.search_element();
+                    break;
+                case 20:     object.sort_linked();
+                    break;
+                case 21:     object.copy_linked();
+                    break;
+                case 22:     object.shuffle_elements();
+                    break;
+                case 23:     object.reverse_elements();
+                    break;
+                case 24:     object.slice_linked();
+                    break;
+                case 25:     object.compare_linked();
+                    break;
+                case 26:     object.swap_elements();
+                    break;
+                case 27:     object.join_linked();
+                    break;
+                case 28:     object.clone_linked();
+                    break;
+                case 29:     object.empty_linked();
+                    break;
+                case 30:     object.empty_check();
+                    break;
+                case 31:     object.linked_list_to_array();
+                    break;
+                case 0:     System.exit(0);
+                default:
+                    System.out.println("Try Again !");
+            }
+        }
+
+
+
+    }
+
+}
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+                                               HASH SET
+
+
+1. Write a Java program to append the specified element to the end of a hash set.
+
+
+import java.util.HashSet;
+  public class Exercise1 {
+  public static void main(String[] args) {
+
+     HashSet<String> h_set = new HashSet<String>();
+ 
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+
+   System.out.println(h_set);
+   }
+}
+
+Output - [Red, White, Pink, Yellow, Black, Green]
+
+---------------------------------------------------------------------------------------------------------------------
+
+2. Write a Java program to iterate through all elements in a hash list.
+
+
+import java.util.*;
+import java.util.Iterator;
+  public class Exercise2 {
+  public static void main(String[] args) {
+        
+     HashSet<String> h_set = new HashSet<String>();
+ 
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+          
+          for(String str : h_set)
+          {
+              System.out.println(str);
+          }
+  }
+}
+
+Output - Red
+         White
+         Pink
+         Yellow
+         Black
+         Green
+   
+    
+[  Iterator<String> p = h_set.iterator();
+   while (p.hasNext()) {
+   System.out.println(p.next()); }  ]
+
+---------------------------------------------------------------------------------------------------------------------
+
+3. Write a Java program to get the number of elements in a hash set.
+
+
+import java.util.*;
+import java.util.Iterator;
+  public class Exercise3 {
+  public static void main(String[] args) {
+
+     HashSet<String> h_set = new HashSet<String>();
+
+           h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+
+    System.out.println(h_set);
+    System.out.println("Size of Hash Set: " + h_set.size());
+   }
+}
+
+Output - [Red, White, Pink, Yellow, Black, Green]            
+         Size of Hash Set: 6
+
+---------------------------------------------------------------------------------------------------------------------
+
+4. Write a Java program to empty an hash set.
+
+
+import java.util.*;
+
+  public class Exercise4 {
+  public static void main(String[] args) {
+         
+     HashSet<String> h_set = new HashSet<String>();
+  
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+
+    System.out.println(h_set);
+ 
+    h_set.removeAll(h_set);
+    System.out.println("After removing all elements: "+h_set);   
+   }
+}
+
+Output - [Red, White, Pink, Yellow, Black, Green]            
+         After removing all elements: [] 
+
+---------------------------------------------------------------------------------------------------------------------
+
+5. Write a Java program to test a hash set is empty or not.
+
+
+import java.util.*;
+
+  public class Exercise5 {
+  public static void main(String[] args) {
+       
+     HashSet<String> h_set = new HashSet();
+  
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+          
+          System.out.println(h_set);
+          System.out.println("Above hash set is empty: " +h_set.isEmpty());
+          
+          h_set.removeAll(h_set);
+          System.out.println("After removing all elements: " +h_set);   
+          System.out.println("Above hash set is empty: " +h_set.isEmpty());
+          
+   }
+}
+
+Output - [Red, White, Pink, Yellow, Black, Green]
+         Above hash set is empty: false
+         After removing all elements: []
+         Above hash set is empty: true
+
+---------------------------------------------------------------------------------------------------------------------
+
+6. Write a Java program to clone a hash set to another hash set.
+
+
+import java.util.*;
+
+  public class Exercise6 {
+  public static void main(String[] args) {
+      
+     HashSet<String> h_set = new HashSet<String>();
+ 
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+
+    System.out.println(h_set);
+
+    HashSet <String> new_h_set = new HashSet <String> ();
+          new_h_set = (HashSet)h_set.clone();
+          System.out.println("Cloned Hash Set:\n" + new_h_set);         
+   }
+}
+
+Output - [Red, White, Pink, Yellow, Black, Green]            
+         Cloned Hash Set: 
+         [Red, White, Pink, Yellow, Black, Green] 
+
+---------------------------------------------------------------------------------------------------------------------
+
+7. Write a Java program to convert a hash set to an array.
+
+
+import java.util.*;
+  public class Exercise7 {
+  public static void main(String[] args) {
+         
+     HashSet<String> h_set = new HashSet<String>();
+  
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+
+      System.out.println("Hash Set: " + h_set);
+     
+      String[] new_array = new String[h_set.size()];
+      h_set.toArray(new_array);
+ 
+     System.out.println("Array: " +h_set);     
+   }
+}
+
+Output - Hash Set: [Red, White, Pink, Yellow, Black, Green]
+         Array: [Red, White, Pink, Yellow, Black, Green]
+
+
+[  for(String element : new_array){
+        System.out.println(element);}  ]
+
+---------------------------------------------------------------------------------------------------------------------
+
+8. Write a Java program to convert a hash set to a tree set.
+
+
+import java.util.*;
+  public class Exercise8 {
+  public static void main(String[] args) {
+       
+     HashSet<String> h_set = new HashSet<String>();
+   
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+      System.out.println("Hash Set: " + h_set);
+    
+     Set<String> tree_set = new TreeSet<String>(h_set);
+ 
+     System.out.println("TreeSet: " +tree_set);  
+  }
+}
+
+Output - Hash Set: [Red, White, Pink, Yellow, Black, Green]
+         TreeSet: [Black, Green, Pink, Red, White, Yellow]
+
+---------------------------------------------------------------------------------------------------------------------
+
+9. Write a Java program to convert a hash set to a List/ArrayList.
+
+
+import java.util.*;
+
+  public class Exercise9 {
+  public static void main(String[] args) {
+       
+     HashSet<String> h_set = new HashSet<String>();
+
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          h_set.add("Pink");
+          h_set.add("Yellow");
+
+      System.out.println("Hash Set: " + h_set);
+
+     List<String> list = new ArrayList<String>(h_set);
+
+     System.out.println("ArrayList: "+ list);
+  }
+}
+
+Output - Hash Set: [Red, White, Pink, Yellow, Black, Green]            
+         ArrayList: [Red, White, Pink, Yellow, Black, Green]
+
+---------------------------------------------------------------------------------------------------------------------
+
+10. Write a Java program to compare two hash set.
+
+
+import java.util.*;
+  public class Exercise10 {
+  public static void main(String[] args) {
+    
+        HashSet<String> h_set = new HashSet<String>();
+   
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+
+          HashSet<String>h_set2 = new HashSet<String>();
+          h_set2.add("Red");
+          h_set2.add("Pink");
+          h_set2.add("Black");
+          h_set2.add("Orange");
+       
+         for (String element : h_set){
+             System.out.println(h_set2.contains(element) ? "Yes" : "No");
+          }      
+     }
+}
+
+Output - Yes
+         No
+         Yes
+         No
+
+---------------------------------------------------------------------------------------------------------------------
+
+11. Write a Java program to compare two sets and retain elements which are same on both sets.
+
+
+import java.util.*;
+  public class Exercise11 {
+  public static void main(String[] args) {
+     
+        HashSet<String> h_set1 = new HashSet<String>();
+    
+          h_set1.add("Red");
+          h_set1.add("Green");
+          h_set1.add("Black");
+          h_set1.add("White");
+          System.out.println("First HashSet: " +h_set1);
+          
+          HashSet<String>h_set2 = new HashSet<String>();
+          h_set2.add("Red");
+          h_set2.add("Pink");
+          h_set2.add("Black");
+          h_set2.add("Orange");
+          System.out.println("Second HashSet: " +h_set2);
+          
+          h_set1.retainAll(h_set2);
+          System.out.println("Same elements: " +h_set1);
+     }
+}
+
+Output - First HashSet: [Red, White, Black, Green]
+         Second HashSet: [Red, Pink, Black, Orange]
+         Same elements: [Red, Black] 
+
+---------------------------------------------------------------------------------------------------------------------
+
+12. Write a Java program to remove all of the elements from a hash set.
+
+
+import java.util.*;
+  public class Exercise12 {
+  public static void main(String[] args) {
+    
+        HashSet<String> h_set = new HashSet<String>();
+    
+          h_set.add("Red");
+          h_set.add("Green");
+          h_set.add("Black");
+          h_set.add("White");
+          System.out.println(h_set);
+
+          h_set.clear();
+          System.out.println("After removing all elements: "+ h_set);
+     }
+}
+
+Output - [Red, White, Black, Green]                 
+         After removing all elements : []
+
+---------------------------------------------------------------------------------------------------------------------
+                                        TREE SET
+
+
+1. Write a Java program to create a new tree set, add some colors (string) and print out the tree set.
+
+
+import java.util.TreeSet;
+public class Exercise1 {
+  public static void main(String[] args) {
+
+  TreeSet<String> tree_set = new TreeSet<String>();
+
+  tree_set.add("Red");
+  tree_set.add("Green");
+  tree_set.add("Orange");
+  tree_set.add("White");
+  tree_set.add("Black");
+
+  System.out.println(tree_set);
+ }
+}
+
+Output - [Black, Green, Orange, Red, White] 
+
+---------------------------------------------------------------------------------------------------------------------
+  
+2. Write a Java program to iterate through all elements in a tree set.
+
+
+import java.util.TreeSet;
+public class Exercise2 {
+  public static void main(String[] args) {
+
+  TreeSet<String> tree_set = new TreeSet<String>();
+
+  tree_set.add("Red");
+  tree_set.add("Green");
+  tree_set.add("Orange");
+  tree_set.add("White");
+  tree_set.add("Black");
+
+  for (String element : tree_set) 
+    {
+    System.out.println(element);
+    }
+ }
+}
+
+Output - Black                                                                  
+         Green                                                                  
+         Orange                                                                 
+         Red                                                                    
+         White 
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+3. Write a Java program to add all the elements of a specified tree set to another tree set.
+
+
+import java.util.TreeSet;
+public class Exercise3 {
+  public static void main(String[] args) {
+      
+  TreeSet<String> tree_set1 = new TreeSet<String>();
+  tree_set1.add("Red");
+  tree_set1.add("Green");
+  tree_set1.add("Orange");
+  System.out.println("Tree set1: "+tree_set1);
+  
+  TreeSet<String> tree_set2 = new TreeSet<String>();
+  tree_set2.add("Pink");
+  System.out.println("Tree set2: "+tree_set2);
+
+   tree_set2.addAll(tree_set1);
+   System.out.println("After adding Tree set1 to Tree set2:\n"+tree_set2);
+ }
+}
+
+Output - Tree set1: [Green, Orange, Red]
+         Tree set2: [Pink]
+         After adding Tree set1 to Tree set2:
+         [Green, Orange, Pink, Red]
+
+---------------------------------------------------------------------------------------------------------------------
+
+4. Write a Java program to create a reverse order view of the elements contained in a given tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise4 {
+  public static void main(String[] args) {
+
+     TreeSet<String> t_set = new TreeSet<String>();
+ 
+          t_set.add("Red");
+          t_set.add("Green");
+          t_set.add("Black");
+          t_set.add("Pink");
+          t_set.add("orange");
+   
+   System.out.println(t_set);  
+
+     Iterator it = t_set.descendingIterator();
+  
+     System.out.println("Reverse Tree set:");
+     while (it.hasNext()) {
+        System.out.println(it.next());
+     }
+  }
+}
+
+Output - [Black, Green, Pink, Red, orange]                    
+         Reverse Tree set:                                             
+         orange                                                                 
+         Red                                                                    
+         Pink                                                                   
+         Green                                                                  
+         Black
+
+---------------------------------------------------------------------------------------------------------------------
+
+5. Write a Java program to get the first and last elements in a tree set. 
+
+
+import java.util.TreeSet;
+  public class Exercise5 {
+  public static void main(String[] args) {
+
+  TreeSet<String> tree_set = new TreeSet<String>();
+
+  tree_set.add("Red");
+  tree_set.add("Green");
+  tree_set.add("Orange");
+  tree_set.add("White");
+  tree_set.add("Black");
+
+  System.out.println(tree_set);
+
+    System.out.println("First Element is: "+tree_set.first());
+
+    System.out.println("Last Element is: "+tree_set.last());
+ }
+}
+
+Output - [Black, Green, Orange, Red, White]                                     
+         First Element is: Black                                                
+         Last Element is: White 
+
+---------------------------------------------------------------------------------------------------------------------
+
+6. Write a Java program to clone a tree set list to another tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+
+  public class Exercise6 {
+  public static void main(String[] args) {
+   
+     TreeSet<String> t_set = new TreeSet<String>();
+  
+          t_set.add("Red");
+          t_set.add("Green");
+          t_set.add("Black");
+          t_set.add("Pink");
+          t_set.add("orange");
+     
+   System.out.println(t_set);  
+   
+    TreeSet<String> new_t_set = new TreeSet<String>();
+    new_t_set = (TreeSet)t_set.clone();
+          System.out.println("Cloned tree set:\n" + new_t_set);      
+     }
+ }
+
+Output - [Black, Green, Pink, Red, orange]
+         Cloned tree set:
+         [Black, Green, Pink, Red, orange]
+
+---------------------------------------------------------------------------------------------------------------------
+
+7. Write a Java program to get the number of elements in a tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+
+  public class Exercise7 {
+  public static void main(String[] args) {
+   
+     TreeSet<String> t_set = new TreeSet<String>();
+  
+          t_set.add("Red");
+          t_set.add("Green");
+          t_set.add("Black");
+          t_set.add("Pink");
+          t_set.add("orange");
+          
+     System.out.println(t_set);
+    System.out.println("Size of tree set: " + t_set.size());
+   }
+}
+
+Output - [Black, Green, Pink, Red, orange]
+         Size of tree set: 5
+
+---------------------------------------------------------------------------------------------------------------------
+
+8. Write a Java program to compare two tree sets.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+
+  public class Exercise8 {
+  public static void main(String[] args) {
+
+        TreeSet<String> t_set1 = new TreeSet<String>();
+   
+          t_set1.add("Red");
+          t_set1.add("Green");
+          t_set1.add("Black");
+          t_set1.add("White");
+          System.out.println("First Tree set: "+t_set1);
+
+          TreeSet<String> t_set2 = new TreeSet<String>();
+          t_set2.add("Red");
+          t_set2.add("Pink");
+          t_set2.add("Black");
+          t_set2.add("Orange");
+          System.out.println("Second Tree set: "+t_set2);
+    
+         for (String element : t_set1){
+             System.out.println(t_set2.contains(element) ? "Yes" : "No");
+          }      
+     }
+}
+
+Output - First Tree set: [Black, Green, Red, White]
+         Second Tree set: [Black, Orange, Pink, Red]
+         Yes
+         No
+         Yes
+         No
+
+---------------------------------------------------------------------------------------------------------------------
+
+9. Write a Java program to find the numbers less than 7 in a tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise9 {
+  public static void main(String[] args) {
+ 
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+  
+   tree_num.add(1);
+   tree_num.add(2);
+   tree_num.add(3);
+   tree_num.add(5);
+   tree_num.add(6);
+   tree_num.add(7);
+   tree_num.add(8);
+   tree_num.add(9);
+   tree_num.add(10);
+     
+    TreeSet <Integer>treeheadset = new TreeSet<Integer>();
+   treeheadset = (TreeSet)tree_num.headSet(7);  
+
+   System.out.println("Tree set: " +treeheadset); 
+   
+   }    
+}
+
+Output - Tree set: [1, 2, 3, 5, 6]
+
+
+[  Iterator iterator;
+   iterator = treeheadset.iterator();
+        
+   while (iterator.hasNext()){
+   System.out.println(iterator.next() + " "); }  ]
+
+---------------------------------------------------------------------------------------------------------------------
+
+10. Write a Java program to get the element in a tree set which is greater than or equal to the given element.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise10 {
+  public static void main(String[] args) {
+
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+
+   tree_num.add(10);
+   tree_num.add(22);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(86);
+   tree_num.add(89);
+   tree_num.add(14);
+   
+   System.out.println("Greater than or equal to 86 : "+tree_num.ceiling(86));
+   System.out.println("Greater than or equal to 29 : "+tree_num.ceiling(29));
+   }    
+}
+
+Output - Greater than or equal to 86 : 86
+         Greater than or equal to 29 : 36
+
+---------------------------------------------------------------------------------------------------------------------
+
+11. Write a Java program to get the element in a tree set which is less than or equal to the given element.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise11 {
+  public static void main(String[] args) {
+ 
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+
+   tree_num.add(10);
+   tree_num.add(29);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(82);
+   tree_num.add(89);
+   tree_num.add(14);
+   
+   System.out.println("Less than or equal to 86 : "+tree_num.floor(86));
+   System.out.println("Less than or equal to 29 : "+tree_num.floor(29));
+   }    
+}
+
+Output - Less than or equal to 86 : 82                                          
+         Less than or equal to 29 : 29
+
+---------------------------------------------------------------------------------------------------------------------
+
+12. Write a Java program to get the element in a tree set which is strictly greater than the given element.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise12 {
+  public static void main(String[] args) {
+
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+
+   tree_num.add(10);
+   tree_num.add(22);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(82);
+   tree_num.add(89);
+   tree_num.add(14);
+   
+   System.out.println("Strictly greater than 76 : "+tree_num.higher(76));
+   System.out.println("Strictly greater than 31 : "+tree_num.higher(31));
+   }    
+}
+
+Output - Strictly greater than 76 : 82                                          
+         Strictly greater than 31 : 36
+
+---------------------------------------------------------------------------------------------------------------------
+
+13. Write a Java program to get an element in a tree set which is strictly less than the given element.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise13 {
+  public static void main(String[] args) {
+
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+     
+   tree_num.add(10);
+   tree_num.add(22);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(82);
+   tree_num.add(89);
+   tree_num.add(14);
+   
+   System.out.println("Strictly less than 69 : "+tree_num.lower(69));
+   System.out.println("Strictly less than 12 : "+tree_num.lower(12));
+
+   }    
+}
+
+Output - Strictly less than 69 : 36                                             
+         Strictly less than 12 : 10
+
+---------------------------------------------------------------------------------------------------------------------
+
+14. Write a Java program to retrieve and remove the first element of a tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise14 {
+  public static void main(String[] args) {
+
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+   
+   tree_num.add(10);
+   tree_num.add(22);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(82);
+   tree_num.add(89);
+   tree_num.add(14);
+
+   System.out.println(tree_num);
+   System.out.println("Removed element: "+tree_num.pollFirst());
+   System.out.println("After removing first element: "+tree_num);
+
+   }    
+}
+
+Output - [10, 14, 16, 22, 25, 36, 70, 82, 89]                
+         Removed element: 10                                  
+         After removing first element: [14, 16, 22, 25, 36, 70, 82, 89]
+
+---------------------------------------------------------------------------------------------------------------------
+
+15. Write a Java program to retrieve and remove the last element of a tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise15 {
+  public static void main(String[] args) {
+
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+   
+   tree_num.add(10);
+   tree_num.add(22);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(82);
+   tree_num.add(89);
+   tree_num.add(14);
+   
+   System.out.println(tree_num);
+   System.out.println("Removed element: "+tree_num.pollLast());
+   System.out.println("After removing last element: "+tree_num);
+
+   }    
+}
+
+Output - [10, 14, 16, 22, 25, 36, 70, 82, 89]
+         Removed element: 89
+         After removing last element: [10, 14, 16, 22, 25, 36, 70, 82]
+
+---------------------------------------------------------------------------------------------------------------------
+
+16. Write a Java program to remove a given element from a tree set.
+
+
+import java.util.TreeSet;
+import java.util.Iterator;
+  public class Exercise16 {
+  public static void main(String[] args) {
+
+   TreeSet <Integer>tree_num = new TreeSet<Integer>();
+  
+   tree_num.add(10);
+   tree_num.add(22);
+   tree_num.add(36);
+   tree_num.add(25);
+   tree_num.add(16);
+   tree_num.add(70);
+   tree_num.add(82);
+   tree_num.add(89);
+   tree_num.add(14);
+   
+   System.out.println(tree_num);
+   tree_num.remove(70);
+   System.out.println("After removing 70:\n"+tree_num);
+   }    
+}
+
+Output - [10, 14, 16, 22, 25, 36, 70, 82, 89]
+         After removing 70:
+         [10, 14, 16, 22, 25, 36, 82, 89]
+
+---------------------------------------------------------------------------------------------------------------------
+                                       PRIORITY QUEUE
+
+
+1. Write a Java program to create a new priority queue, add some colors (string) and print out the elements of the priority queue.
+
+
+import java.util.PriorityQueue;
+public class Exercise1 {
+  public static void main(String[] args) {
+
+  PriorityQueue<String> queue=new PriorityQueue<String>();  
+  queue.add("Red");
+  queue.add("Green");
+  queue.add("Orange");
+  queue.add("White");
+  queue.add("Black");
+  System.out.println(queue);
+ }
+}
+
+Output - [Black, Green, Orange, White, Red] 
+
+---------------------------------------------------------------------------------------------------------------------
+   
+2. Write a Java program to iterate through all elements in priority queue.
+
+
+import java.util.PriorityQueue;
+public class Exercise2 {
+  public static void main(String[] args) {
+
+   PriorityQueue<String> pq = new PriorityQueue<String>();  
+
+  pq.add("Red");
+  pq.add("Green");
+  pq.add("Orange");
+  pq.add("White");
+  pq.add("Black");
+
+  for (String element : pq) {
+    System.out.println(element);
+    }
+ }
+}
+
+Output - Black                                                                  
+         Green                                                                  
+         Orange                                                                 
+         White                                                                  
+         Red
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+3. Write a Java program to add all the elements of a priority queue to another priority queue.
+
+
+import java.util.PriorityQueue;
+public class Exercise3 {
+public static void main(String[] args) {
+
+  PriorityQueue<String> queue1 = new PriorityQueue<String>();  
+  queue1.add("Red");
+  queue1.add("Green");
+  queue1.add("Orange");
+  System.out.println("Priority Queue1: "+queue1);
+
+  PriorityQueue<String> queue2 = new PriorityQueue<String>();  
+  queue2.add("Pink");
+  System.out.println("Priority Queue2: "+queue2);
+
+   queue1.addAll(queue2);
+   System.out.println("New Priority Queue1: "+queue1);
+ }
+}
+
+Output - Priority Queue1: [Green, Red, Orange]                                  
+         Priority Queue2: [Pink]                                  
+         New Priority Queue1: [Green, Orange, Red, Pink]
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+4. Write a Java program to insert a given element into a priority queue.
+
+
+import java.util.PriorityQueue;
+
+  public class Example4 {
+  public static void main(String[] args) {
+
+          PriorityQueue<String> pq1 = new PriorityQueue<String>();  
+   
+          pq1.add("Red");
+          pq1.add("Green");
+          pq1.add("Black");
+          pq1.add("White");
+          System.out.println(pq1);
+
+    pq1.offer("Blue");
+ 
+    System.out.println("New Queue:\n" + pq1);
+  } 
+}
+
+Output - [Black, Red, Green, White]
+         New Queue:
+         [Black, Blue, Green, White, Red]
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+5. Write a Java program to remove all the elements from a priority queue.
+
+
+import java.util.*;
+  public class Example5 {
+  public static void main(String[] args) {
+   
+           PriorityQueue<String> pq1 = new PriorityQueue<String>();  
+   
+          pq1.add("Red");
+          pq1.add("Green");
+          pq1.add("Black");
+          pq1.add("White");
+          System.out.println(pq1);
+   
+    pq1.clear();
+ 
+    System.out.println("After removing elements: " + pq1);
+  } 
+}
+
+Output - [Black, Red, Green, White]                    
+         After removing elements: []
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+6. Write a Java program to count the number of elements in a priority queue.
+
+
+import java.util.PriorityQueue;
+  public class Exercise6 {
+  public static void main(String[] args) {
+ 
+    PriorityQueue<String> pq = new PriorityQueue<String>();  
+  
+          pq.add("Red");
+          pq.add("Green");
+          pq.add("Black");
+          pq.add("Pink");
+          pq.add("orange");
+
+     System.out.println(pq);
+     System.out.println("Size of Priority Queue: " + pq.size());
+   }
+}
+
+Output - [Black, Pink, Green, Red, orange]                      
+         Size of Priority Queue: 5
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+7. Write a Java program to compare two priority queues.
+
+
+import java.util.PriorityQueue;
+  public class Exercise7 {
+  public static void main(String[] args) {
+ 
+        PriorityQueue<String> pq1 = new PriorityQueue<String>();  
+          pq1.add("Red");
+          pq1.add("Green");
+          pq1.add("Black");
+          pq1.add("White");
+          System.out.println("First Priority Queue: "+pq1);
+
+          PriorityQueue<String> pq2 = new PriorityQueue<String>();  
+          pq2.add("Red");
+          pq2.add("Pink");
+          pq2.add("Black");
+          pq2.add("Orange");
+          System.out.println("Second Priority Queue: "+pq2);
+       
+         for (String element : pq1){
+             System.out.println(pq2.contains(element) ? "Yes" : "No");
+          }      
+     }
+}
+
+Output - First Priority Queue: [Black, Red, Green, White]                       
+         Second Priority Queue: [Black, Orange, Pink, Red]                      
+         Yes                                                                    
+         Yes                                                                    
+         No                                                                     
+         No
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+8. Write a Java program to retrieve the first element of the priority queue.
+
+
+import java.util.PriorityQueue;
+  public class Example8 {
+  public static void main(String[] args) {
+
+      PriorityQueue<Integer> pq1 = new PriorityQueue<Integer>();  
+    
+   pq1.add(10);
+   pq1.add(22);
+   pq1.add(36);
+   pq1.add(25);
+   pq1.add(16);
+   pq1.add(70);
+   pq1.add(82);
+   pq1.add(89);
+   pq1.add(14);
+
+   System.out.println(pq1);
+   System.out.println("First element: "+pq1.peek());
+   }    
+}
+
+Output - [10, 14, 36, 16, 22, 70, 82, 89, 25]          
+          First element: 10
+
+---------------------------------------------------------------------------------------------------------------------
+
+9. Write a Java program to retrieve and remove the first element.
+
+
+import java.util.PriorityQueue;
+  public class Exercise9 {
+  public static void main(String[] args) {
+
+      PriorityQueue<Integer> pq1 = new PriorityQueue<Integer>();  
+    
+   pq1.add(10);
+   pq1.add(22);
+   pq1.add(36);
+   pq1.add(25);
+   pq1.add(16);
+   pq1.add(70);
+   pq1.add(82);
+   pq1.add(89);
+   pq1.add(14);
+   
+   System.out.println(pq1);
+   System.out.println("Removed element: "+pq1.poll());
+   System.out.println("After removing first element:\n"+pq1);
+ 
+  }   
+}
+
+Output - [10, 14, 36, 16, 22, 70, 82, 89, 25]
+         Removed element: 10
+         After removing first element:
+         [14, 16, 36, 25, 22, 70, 82, 89]
+
+---------------------------------------------------------------------------------------------------------------------
+
+10. Write a Java program to convert a priority queue to an array containing all of the elements of the queue.
+
+
+import java.util.*;
+
+  public class Example10 {
+  public static void main(String[] args) {
+
+           PriorityQueue<String> pq1 = new PriorityQueue<String>();  
+
+          pq1.add("Red");
+          pq1.add("Green");
+          pq1.add("Black");
+          pq1.add("White");
+         System.out.println("Priority Queue: "+pq1);
+    
+   List<String> array_list = new ArrayList<String>(pq1);         //  pq1.toArray(); //
+   System.out.println("Array List: "+array_list);
+    
+   }    
+}
+
+Output - Priority Queue: [Black, Red, Green, White]
+         Array List: [Black, Red, Green, White]
+
+---------------------------------------------------------------------------------------------------------------------
+
+11. Write a Java program to convert a Priority Queue elements to a string representation.
+
+
+import java.util.*;
+  public class Example11 {
+  public static void main(String[] args) {
+
+           PriorityQueue<String> pq1 = new PriorityQueue<String>();  
+   
+          pq1.add("Red");
+          pq1.add("Green");
+          pq1.add("Black");
+          pq1.add("White");
+    System.out.println("Priority Queue: "+pq1);
+   
+   pq1.toString();
+   System.out.println("String representation: "+pq1);  
+  
+  }
+}
+
+Output - Priority Queue: [Black, Red, Green, White]
+         String representation: [Black, Red, Green, White]
+
+---------------------------------------------------------------------------------------------------------------------
+
+12. Write a Java program to change priorityQueue to maximum priorityqueue.
+
+
+import java.util.*;
+  public class Example12 {
+  public static void main(String[] args) {
+
+  PriorityQueue<Integer> pq1 = new PriorityQueue<>(10, Collections.reverseOrder());
+
+   pq1.add(10);
+   pq1.add(22);
+   pq1.add(36);
+   pq1.add(25);
+   pq1.add(16);
+   pq1.add(70);
+   pq1.add(82);
+   pq1.add(89);
+   pq1.add(14);
+   System.out.println(pq1);
+
+System.out.print("Maximum Priority Queue:\n");
+
+Integer val = null;
+while( (val = pq1.poll()) != null) {
+    System.out.print(val+"  ");
+      }
+	  System.out.print("\n");
+  }
+}
+
+Output - [89, 82, 70, 25, 16, 22, 36, 10, 14]          
+         Maximum Priority Queue: 
+         89  82  70  36  25  22  16  14  10
+
+---------------------------------------------------------------------------------------------------------------------
+                                      HASH MAP
+
+
+1. Write a Java program to associate the specified value with the specified key in a HashMap.
+
+
+import java.util.*;  
+public class Example1 {  
+  public static void main(String args[]) {  
+
+  HashMap<Integer,String> hash_map= new HashMap<Integer,String>();
+  
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+
+  for(Map.Entry x:hash_map.entrySet()){  
+   System.out.println(x.getKey()+" "+x.getValue()); 
+ 
+  }  
+ }  
+}
+
+Output - 1 Red                                                                  
+         2 Green                                                                
+         3 Black                                                                
+         4 White                                                                
+         5 Blue
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+2. Write a Java program to count the number of key-value (size) mappings in a map.
+
+
+import java.util.*;  
+public class Example2 {  
+   public static void main(String args[]){  
+       
+  HashMap<Integer,String> hash_map= new HashMap<Integer,String>();
+  
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+  
+  System.out.println(hash_map);
+  System.out.println("Size of the hash map: "+hash_map.size());
+ }
+}
+
+Output - {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}
+         Size of the hash map: 5
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+3. Write a Java program to copy all of the mappings from the specified map to another map.
+
+
+import java.util.*;  
+public class Example3 {  
+   public static void main(String args[]) {
+
+  HashMap <Integer,String> hash_map1 = new HashMap <Integer,String> ();
+  HashMap <Integer,String> hash_map2 = new HashMap <Integer,String> ();
+ 
+  hash_map1.put(1, "Red");
+  hash_map1.put(2, "Green");
+  hash_map1.put(3, "Black");
+  System.out.println("First map: " + hash_map1);
+  
+  hash_map2.put(4, "White");
+  hash_map2.put(5, "Blue");
+  System.out.println("Second map: " + hash_map2);
+
+  hash_map2.putAll(hash_map1);
+  System.out.println("New Second map: " + hash_map2);
+ }
+}
+
+Output - First map: {1=Red, 2=Green, 3=Black}
+         Second map: {4=White, 5=Blue}
+         New Second map: {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+4. Write a Java program to remove all of the mappings from a map.
+
+
+import java.util.*;  
+public class Example4 {  
+   public static void main(String args[]) {
+
+  HashMap <Integer,String> hash_map = new HashMap <Integer,String> ();
+
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+  
+  System.out.println(hash_map);
+
+  hash_map.clear();
+  System.out.println("After removing all elements: " + hash_map);
+ }
+}
+
+Output - {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}    
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+5. Write a Java program to check whether a map contains key-value mappings (empty) or not.
+
+
+import java.util.*;  
+public class Example5 {  
+   public static void main(String args[]) {
+  HashMap <Integer,String> hash_map = new HashMap <Integer,String> ();
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+  System.out.println(hash_map);
+
+  boolean result = hash_map.isEmpty();
+  System.out.println("Is hash map empty: " + result);
+ 
+  hash_map.clear();
+  System.out.println("After emptying: " +hash_map);
+
+  result = hash_map.isEmpty();
+  System.out.println("Is hash map empty: " + result);
+ }
+}
+
+Output - {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}
+         Is hash map empty: false
+         After emptying: {}
+         Is hash map empty: true
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+6. Write a Java program to get a shallow copy of a HashMap instance.
+
+
+import java.util.*;  
+public class Example6 {  
+   public static void main(String args[]){  
+
+  HashMap<Integer,String> hash_map= new HashMap<Integer,String>(); 
+ 
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+  System.out.println(hash_map);
+
+   HashMap<Integer,String> new_hash_map= new HashMap<Integer,String>(); 
+
+   new_hash_map = (HashMap)hash_map.clone();     
+   System.out.println("Cloned map:\n" + new_hash_map);     
+   
+     }
+}
+
+Output - {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}           
+         Cloned map: 
+         {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+7. Write a Java program to test if a map contains a mapping for the specified key.
+
+
+import java.util.*;  
+public class Example7 {  
+   public static void main(String args[]) {
+
+  HashMap < String, Integer > hash_map = new HashMap < String, Integer > ();
+
+  hash_map.put("Red", 1);
+  hash_map.put("Green", 2);
+  hash_map.put("Black", 3);
+  hash_map.put("White", 4);
+  hash_map.put("Blue", 5);
+  System.out.println(hash_map);
+
+  System.out.println("1. Is key 'Green' exists?");
+
+  if (hash_map.containsKey("Green")) 
+   {
+   System.out.println("yes! - " + hash_map.get("Green"));
+   } 
+   else 
+   {
+   System.out.println("no!");
+   }
+
+  System.out.println("\n2. Is key 'orange' exists?");
+
+  if (hash_map.containsKey("orange")) 
+  {
+   System.out.println("yes! - " + hash_map.get("orange"));
+  } 
+  else 
+  {
+   System.out.println("no!");
+  }
+ }
+}
+
+Output - {Red=1, White=4, Blue=5, Black=3, Green=2}           
+         1. Is key 'Green' exists?                                              
+         yes! - 2                                                               
+                                                                       
+         2. Is key 'orange' exists?                                             
+         no!       
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+8. Write a Java program to test if a map contains a mapping for the specified value.
+
+
+import java.util.*;  
+public class Example8 {  
+   public static void main(String args[]) {
+
+  HashMap < Integer, String > hash_map = new HashMap < Integer, String > ();
+
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+  System.out.println(hash_map);
+
+  System.out.println("1. Is value \'Green\' exists?");
+
+  if (hash_map.containsValue("Green")) 
+  {
+   System.out.println("Yes! ");
+  } else 
+  {
+   System.out.println("no!");
+  }
+
+  System.out.println("\n2. Is value \'orange\' exists?");
+
+  if (hash_map.containsValue("orange")) 
+  {
+   System.out.println("yes! - " );
+  } else 
+  {
+   System.out.println("No!");
+  }
+ }
+}
+
+Output - {1=Red, 2=Green, 3=Black, 4=White, 5=Blue}           
+         1. Is value 'Green' exists?                                            
+         Yes!                                                                   
+                                                                       
+         2. Is value 'orange' exists?                                           
+         No!       
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+9. Write a Java program to create a set view of the mappings contained in a map.
+
+
+import java.util.*;  
+public class Example9 {  
+    public static void main(String args[]) {
+
+  HashMap < Integer, String > hash_map = new HashMap < Integer, String > ();
+
+  hash_map.put(1, "Red");
+  hash_map.put(2, "Green");
+  hash_map.put(3, "Black");
+  hash_map.put(4, "White");
+  hash_map.put(5, "Blue");
+
+  Set set = hash_map.entrySet();
+  System.out.println("Set view: " + set);
+
+ }
+}
+
+Output - Set view: [1=Red, 2=Green, 3=Black, 4=White, 5=Blue]
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+10. Write a Java program to get the value of a specified key in a map.
+
+
+import java.util.*;  
+public class Example10 {  
+    public static void main(String args[]){  
+        
+   HashMap<Integer,String> hash_map= new HashMap<Integer,String>();  
+   hash_map.put(1,"Red");
+  hash_map.put(2,"Green");
+  hash_map.put(3,"Black");
+  hash_map.put(4,"White");
+  hash_map.put(5,"Blue");
+   
+   System.out.println("Value for key 3 is: " +hash_map.get(3));       // String val=(String)hash_map.get(3); //
+ }
+}
+
+Output - Value for key 3 is: Black
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+11. Write a Java program to get a set view of the keys contained in this map.
+
+
+import java.util.*;  
+public class Example11 {  
+     public static void main(String args[]){  
+ 
+  HashMap<Integer,String> hash_map= new HashMap<Integer,String>();  
+  
+  hash_map.put(1,"Red");
+  hash_map.put(2,"Green");
+  hash_map.put(3,"Black");
+  hash_map.put(4,"White");
+  hash_map.put(5,"Blue");
+  
+   Set keyset = hash_map.keySet();
+   System.out.println("Key set values are: " + keyset);  
+ }
+}
+
+Output - Key set values are: [1, 2, 3, 4, 5]
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+12. Write a Java program to get a collection view of the values contained in this map.
+
+
+import java.util.*;  
+public class Example12 {  
+     public static void main(String args[]){  
+ 
+  HashMap<Integer,String> hash_map= new HashMap<Integer,String>();  
+    hash_map.put(1,"Red");
+  hash_map.put(2,"Green");
+  hash_map.put(3,"Black");
+  hash_map.put(4,"White");
+  hash_map.put(5,"Blue");
+       
+   System.out.println("Collection view is: "+ hash_map.values());
+ }
+}
+
+Output - Collection view is: [Red, Green, Black, White, Blue]
+
+---------------------------------------------------------------------------------------------------------------------
+                                               TREE MAP
+
+
+1. Write a Java program to associate the specified value with the specified key in a Tree Map.
+
+
+import java.util.*;  
+public class Example1 {  
+  public static void main(String args[]){  
+ 
+   TreeMap<Integer,String> tree_map=new TreeMap<Integer,String>();      
+   
+  tree_map.put(1, "Red");
+  tree_map.put(2, "Green");
+  tree_map.put(3, "Black");
+  tree_map.put(4, "White");
+  tree_map.put(5, "Blue");
+    
+   for (Map.Entry<Integer,String> entry : tree_map.entrySet())           / tree_map.entrySet(); /
+   {
+    System.out.println(entry.getKey() + "=>" + entry.getValue());
+   }
+ }  
+}
+
+Output - 1=>Red                                                                 
+         2=>Green                                                               
+         3=>Black                                                               
+         4=>White                                                               
+         5=>Blue
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+2. Write a Java program to copy a Tree Map content to another Tree Map.
+
+
+import java.util.*;  
+public class Example2 {  
+   public static void main(String args[]){  
+  
+   TreeMap<String,String> tree_map1=new TreeMap<String,String>();      
+  
+  tree_map1.put("C1", "Red");
+  tree_map1.put("C2", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C4", "White");
+  tree_map1.put("C5", "Blue");
+   System.out.println("Tree Map 1: "+tree_map1);
+   
+   TreeMap<String,String> tree_map2 = new TreeMap<String,String>();
+   tree_map2.put("A1", "Orange");
+   tree_map2.put("A2", "Pink");
+   System.out.println("Tree Map 2: "+tree_map2);
+   
+   tree_map2.putAll(tree_map1);
+   System.out.println("After copying map1 to map2:\n"+tree_map2);   
+ }  
+}
+
+Output - Tree Map 1: {C1=Red, C2=Green, C3=Black, C4=White, C5=Blue}
+         Tree Map 2: {A1=Orange, A2=Pink}
+         After copying map1 to map2: 
+         {A1=Orange, A2=Pink, C1=Red, C2=Green, C3=Black, C4=White, C5=Blue}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+3. Write a Java program to search a key in a Tree Map.
+
+
+import java.util.*;  
+public class Example3 {  
+   public static void main(String args[]){  
+
+   TreeMap<String,String> tree_map1=new TreeMap<String,String>();      
+  
+  tree_map1.put("C1", "Red");
+  tree_map1.put("C2", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C4", "White"); 
+    
+  System.out.println(tree_map1);
+
+        if(tree_map1.containsKey("C1"))
+        {
+            System.out.println("The Tree Map contains key C1");
+        } 
+        else 
+        {
+            System.out.println("The Tree Map does not contain key C1");
+        }
+
+        if(tree_map1.containsKey("C5"))
+        {
+            System.out.println("The Tree Map contains key C5");
+        } 
+        else 
+        {
+            System.out.println("The TreeMap does not contain key C5");
+        }
+    }
+}
+
+Output - {C1=Red, C2=Green, C3=Black, C4=White}                                 
+         The Tree Map contains key C1                                           
+         The TreeMap does not contain key C5
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+4. Write a Java program to search a value in a Tree Map.
+
+
+import java.util.*;  
+public class Example4 {  
+   public static void main(String args[]){  
+  
+   TreeMap<String,String> tree_map1=new TreeMap<String,String>();      
+   
+  tree_map1.put("C1", "Red");
+  tree_map1.put("C2", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C4", "White"); 
+  
+  System.out.println(tree_map1);
+    
+ if(tree_map1.containsValue("Green"))
+        {
+            System.out.println("The TreeMap contains value Green");
+        } 
+        else 
+        {
+            System.out.println("The TreeMap does not contain value Green");
+        }
+
+        if(tree_map1.containsValue("Pink"))
+        {
+            System.out.println("The TreeMap contains value Pink");
+        } 
+        else 
+        {
+            System.out.println("The TreeMap does not contain value Pink");
+        }
+    }
+}
+
+Output - {C1=Red, C2=Green, C3=Black, C4=White} 
+         The TreeMap contains value Green                                       
+         The TreeMap does not contain value Pink
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+5. Write a Java program to get all keys from the given a Tree Map.
+
+
+import java.util.*;  
+public class Example5 {  
+   public static void main(String args[]){  
+   
+   TreeMap<String,String> tree_map1=new TreeMap<String,String>();      
+   
+  tree_map1.put("C1", "Red");
+  tree_map1.put("C2", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C4", "White"); 
+    
+ Set<String> keys = tree_map1.keySet();          / System.out.println(tree_map1.keySet()); /
+        for(String key: keys){
+            System.out.println(key);
+        }
+    }
+}
+
+Output - C1                                                                     
+         C2                                                                     
+         C3                                                                     
+         C4
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+6. Write a Java program to delete all elements from a given Tree Map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example6 {  
+    public static void main(String args[]){  
+   
+   TreeMap<String,String> tree_map1 = new TreeMap<String,String>();      
+ 
+  tree_map1.put("C1", "Red");
+  tree_map1.put("C2", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C4", "White"); 
+    
+  System.out.println(tree_map1);
+  tree_map1.clear();
+  System.out.println("After removing: "+tree_map1);
+
+ }
+}
+
+Output - {C1=Red, C2=Green, C3=Black, C4=White}        
+         After removing: {}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+7. Write a Java program to sort keys in Tree Map by using comparator.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example7 {  
+    public static void main(String args[]){
+  
+  TreeMap<String,String> tree_map1 = new TreeMap<String,String>(new sort_key());
+ 
+  tree_map1.put("C2", "Red");
+  tree_map1.put("C4", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C1", "White"); 
+  System.out.println(tree_map1); 
+
+    }
+}
+
+ class sort_key implements Comparator<String>{
+     @Override
+    public int compare(String str1, String str2) 
+    {
+        return str1.compareTo(str2);
+    }    
+}
+
+Output - {C1=White, C2=Red, C3=Black, C4=Green} 
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+8. Write a Java program to get a key-value mapping associated with the greatest key and the least key in a map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example8 {  
+     public static void main(String args[]) {
+
+  TreeMap <String,String> tree_map1 = new TreeMap <String,String> ();
+ 
+  tree_map1.put("C1", "Red");
+  tree_map1.put("C2", "Green");
+  tree_map1.put("C3", "Black");
+  tree_map1.put("C4", "White");
+
+  System.out.println(tree_map1);
+  System.out.println("Greatest key: " + tree_map1.firstEntry());
+  System.out.println("Least key: " + tree_map1.lastEntry());
+
+ }
+}
+
+Output - {C1=Red, C2=Green, C3=Black, C4=White}        
+         Greatest key: C1=Red                                                   
+         Least key: C4=White 
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+9. Write a Java program to get the first (lowest) key and the last (highest) key currently in a map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example9 {  
+     public static void main(String args[]) {
+
+  TreeMap <String,String> tree_map1 = new TreeMap <String,String> ();
+
+  tree_map1.put("C2", "Red");
+  tree_map1.put("C1", "Green");
+  tree_map1.put("C4", "Black");
+  tree_map1.put("C3", "White");
+
+  System.out.println("Orginal TreeMap content: " + tree_map1);
+  System.out.println("Greatest key: " + tree_map1.firstKey());
+  System.out.println("Least key: " + tree_map1.lastKey());
+
+ }
+}
+
+Output - {C1=Green, C2=Red, C3=White, C4=Black}        
+         Greatest key: C1                                                       
+         Least key: C4
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+10. Write a Java program to get a reverse order view of the keys contained in a given map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example10 {  
+     public static void main(String args[]) {
+
+  TreeMap <String,String> tree_map1 = new TreeMap <String,String> ();
+ 
+  tree_map1.put("C2", "Red");
+  tree_map1.put("C1", "Green");
+  tree_map1.put("C4", "Black");
+  tree_map1.put("C3", "White");
+
+  System.out.println(tree_map1);
+  System.out.println("Reverse order view of keys: " + tree_map1.descendingKeySet());
+
+ }
+}
+
+Output - {C1=Green, C2=Red, C3=White, C4=Black}        
+         Reverse order view of keys: [C4, C3, C2, C1]
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+11. Write a Java program to get a key-value mapping associated with the greatest key less than or equal to the given key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example11 {  
+     public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map1 = new TreeMap < Integer, String > ();
+
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White");
+  tree_map1.put(60, "Pink");
+
+  System.out.println(tree_map1);
+
+  System.out.println("Checking entry for 10: ");
+  System.out.println("Value is: " + tree_map1.floorEntry(10));
+
+  System.out.println("Checking entry for 70: ");
+  System.out.println("Value is: " + tree_map1.floorEntry(70));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+         Checking entry for 10:                                             
+         Value is: 10=Red                                                                      
+         Checking entry for 70:                                             
+         Value is: 60=Pink
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+12. Write a Java program to get the greatest key less than or equal to the given key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example12 {  
+      public static void main(String args[]) {
+ 
+  TreeMap < Integer, String > tree_map1 = new TreeMap < Integer, String > ();
+ 
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White");
+  tree_map1.put(60, "Pink");
+
+  System.out.println(tree_map1);
+
+  System.out.println("Checking entry for 10: ");
+  System.out.println("Key is: " + tree_map1.floorKey(10));
+
+  System.out.println("Checking entry for 70: ");
+  System.out.println("Key is: " + tree_map1.floorKey(70));
+
+ }
+}
+
+Output -  {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+          Checking the entry for 10:                                             
+          Key is: 10                                                                                   
+          Checking the entry for 70:                                             
+          Key is: 60
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+14. Write a Java program to get the portion of this map whose keys are less than (or equal to, if inclusive is true) a given key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example14 {  
+       public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map1 = new TreeMap < Integer, String > ();
+
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White");
+  tree_map1.put(60, "Pink");
+
+  System.out.println(tree_map1);
+
+  System.out.println("Checking the entry for 10: ");
+
+  System.out.println("Key(s): " + tree_map1.headMap(10, true));
+  System.out.println("Checking the entry for 20: ");
+  System.out.println("Key(s): " + tree_map1.headMap(20, true));
+  System.out.println("Checking the entry for 70: ");
+  System.out.println("Key(s): " + tree_map1.headMap(70, true));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+         Checking the entry for 10:                                             
+         Key(s): {10=Red}                                                       
+         Checking the entry for 20:                                             
+         Key(s): {10=Red, 20=Green}                                             
+         Checking the entry for 70:                                             
+         Key(s): {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+15. Write a Java program to get the least key strictly greater than the given key. Return null if there is no such key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example15 {  
+       public static void main(String args[]){  
+  
+   TreeMap< Integer, String > tree_map1 = new TreeMap< Integer, String >();      
+  
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White"); 
+  tree_map1.put(60, "Pink"); 
+    
+      System.out.println(tree_map1);
+
+	  System.out.println("Checking the entry for 20: ");
+      System.out.println("Key(s): "+tree_map1.higherEntry(20));
+  
+	  System.out.println("Checking the entry for 70: ");
+      System.out.println("Key(s): "+tree_map1.higherEntry(70));  
+    }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+         Checking the entry for 20:                                             
+         Key(s): 40=Black                                                       
+         Checking the entry for 70:                                             
+         Key(s): null
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+16. Write a Java program to get a key-value mapping associated with the greatest key strictly less than the given key. Return null if there is no such key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example16 {  
+       public static void main(String args[]){  
+  
+   TreeMap< Integer, String > tree_map1 = new TreeMap< Integer, String >();      
+  
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White"); 
+  tree_map1.put(60, "Pink"); 
+    
+      System.out.println(tree_map1);
+
+	  System.out.println("Checking the entry for 10: ");
+      System.out.println("Key(s): "+tree_map1.lowerEntry(10));  
+ 
+	  System.out.println("Checking the entry for 70: ");
+      System.out.println("Key(s): "+tree_map1.lowerEntry(70));  
+    }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+         Checking the entry for 10:                                             
+         Key(s): null                                                                           
+         Checking the entry for 70:                                             
+         Key(s): 60=Pink
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+17. Write a Java program to get the greatest key strictly less than the given key. Return null if there is no such key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example17 {  
+         public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map1 = new TreeMap < Integer, String > ();
+
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White");
+  tree_map1.put(60, "Pink");
+
+  System.out.println(tree_map1);
+
+  System.out.println("Checking the entry for 10: ");
+  System.out.println("Key(s): " + tree_map1.lowerKey(10));
+
+  System.out.println("Checking the entry for 70: ");
+  System.out.println("Key(s): " + tree_map1.lowerKey(70));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+         Checking the entry for 10:                                             
+         Key(s): null                                                           
+         Checking the entry for 70:                                             
+         Key(s): 60
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+18. Write a Java program to get NavigableSet view of the keys contained in a map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example18 {  
+         public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map1 = new TreeMap < Integer, String > ();
+
+  tree_map1.put(10, "Red");
+  tree_map1.put(20, "Green");
+  tree_map1.put(40, "Black");
+  tree_map1.put(50, "White");
+  tree_map1.put(60, "Pink");
+
+  System.out.println(tree_map1);
+  System.out.println("Navigable set view:\n" + tree_map1.navigableKeySet());
+
+ }
+}
+
+Output -  {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}                                                                      
+          Navigable set view: 
+          [10, 20, 40, 50, 60]
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+19. Write a Java program to remove and get a key-value mapping associated with the least key in a map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example19 {  
+         public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(40, "Black");
+  tree_map.put(50, "White");
+  tree_map.put(60, "Pink");
+
+  System.out.println(tree_map);
+  System.out.println("Removed lowest: " + tree_map.pollFirstEntry());
+  System.out.println("After removing: " + tree_map);
+
+ }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}     
+         Removed lowest: 10=Red                                                 
+         After removing: {20=Green, 40=Black, 50=White, 60=Pink}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+20. Write a Java program to remove and get a key-value mapping associated with the greatest key in this map.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example19 {  
+         public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(40, "Black");
+  tree_map.put(50, "White");
+  tree_map.put(60, "Pink");
+
+  System.out.println(tree_map);
+  System.out.println("Removed highest: " + tree_map.pollLastEntry());
+  System.out.println("After removing: " + tree_map);
+
+ }
+}
+
+Output - {10=Red, 20=Green, 40=Black, 50=White, 60=Pink}     
+         Removed highest: 60=Pink                                                
+         After removing: {10=Red,20=Green, 40=Black, 50=White}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+21. Write a Java program to get the portion of a map whose keys range from a given key (inclusive), to another key (exclusive).
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example21 {  
+          public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(30, "Black");
+  tree_map.put(40, "White");
+  tree_map.put(50, "Pink");
+
+  System.out.println(tree_map);
+
+  System.out.println("Sub map: " +tree_map.subMap(20, 40,));
+ }
+}
+
+Output - {10=Red, 20=Green, 30=Black, 40=White, 50=Pink}                                                                      
+         Sub map: {20=Green, 30=Black}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+22. Write a Java program to get the portion of a map whose keys range from a given key to another key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example22 {  
+           public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(30, "Black");
+  tree_map.put(40, "White");
+  tree_map.put(50, "Pink");
+
+  System.out.println(tree_map);
+
+  System.out.println("Sub map: " +tree_map.subMap(20, true, 40, true));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 30=Black, 40=White, 50=Pink}                                                                      
+         Sub map: {20=Green, 30=Black, 40=White}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+23. Write a Java program to get a portion of a map whose keys are greater than or equal to a given key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example23 {  
+           public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(30, "Black");
+  tree_map.put(40, "White");
+  tree_map.put(50, "Pink");
+
+  System.out.println(tree_map);
+  System.out.println("Keys greater than or equal to 20: " + tree_map.tailMap(20));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 30=Black, 40=White, 50=Pink}                                                                      
+         Keys greater than or equal to 20: {20=Green, 30=Black, 40=White, 50=Pink}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+24. Write a Java program to get a portion of a map whose keys are greater than to a given key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example24 {  
+           public static void main(String args[]) {
+
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(30, "Black");
+  tree_map.put(40, "White");
+  tree_map.put(50, "Pink");
+
+  System.out.println(tree_map);
+  System.out.println("Keys greater than 20: " + tree_map.tailMap(20, false));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 30=Black, 40=White, 50=Pink}                                                                      
+         Keys greater than 20: {30=Black, 40=White, 50=Pink}
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+25. Write a Java program to get a key-value mapping associated with the least key greater than or equal to the given key. Return null if there is no such key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example25 {  
+           public static void main(String args[]) {
+  
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(30, "Black");
+  tree_map.put(40, "White");
+  tree_map.put(50, "Pink");
+
+  System.out.println(tree_map);
+  System.out.println("Keys greater than or equal to 20: " + tree_map.ceilingEntry(5));
+  System.out.println("Keys greater than or equal to 40: " + tree_map.ceilingEntry(40));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 30=Black, 40=White, 50=Pink}
+         Keys greater than or equal to 20: 10=Red
+         Keys greater than or equal to 40: 40=White
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+26. Write a Java program to get the least key greater than or equal to the given key. Returns null if there is no such key.
+
+
+import java.util.*;
+import java.util.Map.Entry;  
+public class Example25 {  
+           public static void main(String args[]) {
+  
+  TreeMap < Integer, String > tree_map = new TreeMap < Integer, String > ();
+
+  tree_map.put(10, "Red");
+  tree_map.put(20, "Green");
+  tree_map.put(30, "Black");
+  tree_map.put(40, "White");
+  tree_map.put(50, "Pink");
+
+  System.out.println(tree_map);
+  System.out.println("Keys greater than or equal to 20: " + tree_map.ceilingKey(5));
+  System.out.println("Keys greater than or equal to 40: " + tree_map.ceilingKey(40));
+
+ }
+}
+
+Output - {10=Red, 20=Green, 30=Black, 40=White, 50=Pink}
+         Keys greater than or equal to 20: 10
+         Keys greater than or equal to 40: 40
+
+---------------------------------------------------------------------------------------------------------------------
+ 
+
